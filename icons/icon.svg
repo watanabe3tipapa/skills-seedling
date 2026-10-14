@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="skills-seedling">
+  <rect width="512" height="512" fill="#0b0b0b"/>
+  <g stroke-linecap="round">
+    <path d="M256 392 L256 236" stroke="#ffffff" stroke-width="26"/>
+    <path d="M256 300 C 196 302 154 264 156 206 C 220 202 258 240 256 300 Z" fill="#00e5a8"/>
+    <path d="M256 268 C 318 268 360 228 356 168 C 292 166 254 206 256 268 Z" fill="#ffffff"/>
+    <circle cx="256" cy="418" r="10" fill="#ffffff"/>
+  </g>
+</svg>

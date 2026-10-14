@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SKILLS.md Editor Launcher</title>
+<link rel="manifest" href="./manifest.webmanifest">
+<meta name="theme-color" content="#00e5a8">
+<link rel="icon" href="./icons/favicon-32.png" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="./icons/icon.svg">
+<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="SKILLS Editor">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* brutalist theme — quarto-plus (themes/site.css) に倣う */
+:root {
+  --bg: #ffffff;
+  --fg: #0b0b0b;
+  --accent: #00e5a8;
+  --muted: #f2f2f2;
+  --border: #0b0b0b;
+  --radius: 4px;
+  --font-ui: Inter, "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  --font-mono: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, "Noto Mono", monospace;
+  --step--1: clamp(0.875rem, 0.85rem + 0.15vw, 0.9375rem);
+  --step-0: clamp(1rem, 0.95rem + 0.3vw, 1.0625rem);
+  --step-1: clamp(1.2rem, 1.05rem + 0.5vw, 1.4rem);
+  --space: clamp(1rem, 0.8rem + 1vw, 1.4rem);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-ui);
+  -webkit-font-smoothing: antialiased;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.75;
+  font-size: var(--step-0);
+}
+body.modal-open { overflow: hidden; }
+
+.mono { font-family: var(--font-mono); }
+
+.skip-link {
+  position: absolute; left: -999px; top: 0; z-index: 100;
+  background: var(--accent); color: var(--fg); font-weight: 700;
+  padding: 0.5rem 1rem; border: 3px solid var(--border); border-radius: 2px;
+}
+.skip-link:focus { left: 8px; top: 8px; }
+
+/* ==== アプリ枠 ==== */
+.frame {
+  max-width: 1000px;
+  margin: 28px auto 48px;
+  padding: 26px 28px 40px;
+  border: 6px solid var(--border);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, var(--muted), transparent 40%);
+}
+
+/* ==== マストヘッド ==== */
+.lp-masthead {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 10px; margin-bottom: 18px;
+}
+.lp-brand {
+  display: inline-block; padding: 4px 12px;
+  border: 3px solid var(--border); background: var(--bg);
+  border-radius: 2px; font-weight: 700;
+}
+.lp-tag {
+  font-family: var(--font-mono); font-size: 0.8rem;
+  padding: 4px 10px; border: 2px solid var(--border);
+  background: var(--muted); border-radius: 2px;
+}
+
+/* ==== ヒーロー ==== */
+.hero { margin: 0 0 22px; }
+.hero-title {
+  display: inline-block; margin: 0 0 14px; padding: 6px 16px;
+  border: 3px solid var(--border); background: var(--bg);
+  border-radius: 2px; font-size: 2.2rem; font-weight: 700;
+  line-height: 1.2; letter-spacing: -0.01em;
+}
+.hero-subtitle { font-size: 1.05rem; max-width: 58ch; margin: 0 0 18px; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+
+/* ==== ボタン ==== */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem;
+  font-family: var(--font-ui); font-size: var(--step--1); font-weight: 700;
+  padding: 0.55rem 1rem; border: 3px solid var(--border); border-radius: 2px;
+  background: var(--bg); color: var(--fg); cursor: pointer; text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.btn svg { width: 16px; height: 16px; }
+.btn-primary { background: var(--accent); color: var(--fg); flex: 1; }
+.btn-primary:hover { background: var(--fg); color: var(--bg); }
+.btn-ghost { background: var(--bg); }
+.btn-ghost:hover { background: var(--accent); color: var(--fg); }
+.btn-icon { padding: 0.55rem; }
+.btn.copied { background: var(--accent); color: var(--fg); }
+.btn:disabled { opacity: 0.5; cursor: progress; }
+
+#install-btn { display: none; background: var(--accent); color: var(--fg); }
+#install-btn.show { display: inline-flex; }
+
+/* ==== 注記 ==== */
+.note {
+  background: var(--bg); border: 3px solid var(--border); border-radius: var(--radius);
+  padding: calc(var(--space) * 0.9); font-size: var(--step--1);
+  margin-bottom: calc(var(--space) * 1.2);
+}
+.note strong { font-weight: 700; }
+.note code {
+  font-family: var(--font-mono); background: var(--bg); padding: 1px 6px;
+  border: 2px dashed var(--border); border-radius: 2px; font-size: 0.88em;
+}
+
+/* ==== ツールバー ==== */
+.toolbar {
+  padding: 0; margin-bottom: calc(var(--space) * 1.2);
+  display: flex; flex-direction: column; gap: 0.75rem;
+}
+.search-row { display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; }
+.search-wrap { position: relative; flex: 1; min-width: 220px; }
+.search-wrap svg {
+  position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%);
+  width: 18px; height: 18px; color: var(--fg); pointer-events: none;
+}
+.search-wrap kbd {
+  position: absolute; right: 0.7rem; top: 50%; transform: translateY(-50%);
+  font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;
+  border: 2px solid var(--border); border-radius: 2px; padding: 0.05rem 0.4rem; background: var(--muted);
+}
+.toolbar input[type="search"] {
+  width: 100%; font: inherit; font-size: var(--step--1);
+  padding: 0.6rem 2.4rem;
+  border: 3px solid var(--border); border-radius: 2px;
+  background: var(--bg); color: var(--fg);
+}
+.toolbar input[type="search"]::placeholder { color: #777; }
+.toolbar input[type="search"]:focus { outline: 3px solid var(--accent); outline-offset: 1px; }
+.toolbar .status { font-size: var(--step--1); font-family: var(--font-mono); white-space: nowrap; }
+
+.pills { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.pill {
+  font: inherit; font-size: var(--step--1); font-weight: 700; cursor: pointer;
+  padding: 0.35rem 0.85rem; border-radius: 2px;
+  border: 3px solid var(--border); background: var(--bg); color: var(--fg);
+  transition: background 0.15s ease;
+}
+.pill:hover { background: var(--accent); }
+.pill[aria-pressed="true"] { background: var(--accent); }
+.pill .n { font-family: var(--font-mono); margin-left: 0.35rem; }
+
+/* ==== セクション ==== */
+section { margin-bottom: calc(var(--space) * 2); scroll-margin-top: 1rem; }
+section h2 {
+  display: table; padding: 6px 14px; margin-bottom: calc(var(--space) * 0.9);
+  border: 3px solid var(--border); background: var(--bg);
+  border-radius: 2px; font-size: 1.15rem; font-weight: 700;
+}
+section h2::before {
+  content: ""; display: inline-block; width: 11px; height: 11px;
+  margin-right: 9px; vertical-align: 2px;
+  background: var(--accent); border: 3px solid var(--border);
+}
+section h2 .count {
+  display: inline-block; margin-left: 9px; padding: 0 7px;
+  font-family: var(--font-mono); font-size: 0.8rem; font-weight: 700;
+  border: 2px solid var(--border); border-radius: 2px; background: var(--muted);
+}
+
+/* ==== カード ==== */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+.card {
+  background: var(--bg); border: 3px solid var(--border); border-radius: var(--radius);
+  padding: calc(var(--space) * 0.95);
+  display: flex; flex-direction: column;
+  transition: background 0.15s ease;
+}
+.card:hover { background: var(--accent); }
+.card h3 { font-size: var(--step-0); font-weight: 700; margin-bottom: 0.35rem; display: flex; align-items: baseline; gap: 0.5rem; flex-wrap: wrap; }
+.card h3 .name { font-family: var(--font-mono); font-weight: 700; }
+.card h3 .ver { font-family: var(--font-mono); font-weight: 400; font-size: 0.75em; }
+.card .meta { font-family: var(--font-mono); font-size: 0.72rem; margin-bottom: 0.5rem; }
+.card .meta .variety { font-weight: 700; }
+.card p { font-size: var(--step--1); line-height: 1.7; flex: 1; }
+.card .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.8rem 0; }
+.card .tag {
+  font-family: var(--font-mono); font-size: 0.72rem; cursor: pointer;
+  background: var(--bg); padding: 1px 7px; border-radius: 2px; border: 2px dashed var(--border);
+}
+.card .tag:hover { background: var(--fg); color: var(--bg); }
+.card .actions { display: flex; gap: 0.5rem; margin-top: 0.4rem; }
+
+.empty { text-align: center; padding: calc(var(--space) * 3); border: 3px dashed var(--border); border-radius: var(--radius); }
+
+/* ==== モーダル ==== */
+#modal {
+  position: fixed; inset: 0; z-index: 60;
+  display: none; align-items: center; justify-content: center;
+  padding: var(--space);
+  background: rgba(11, 11, 11, 0.55);
+}
+#modal.show { display: flex; }
+.modal-card {
+  background: var(--bg); border: 4px solid var(--border); border-radius: var(--radius);
+  width: min(720px, 100%); max-height: min(86vh, 900px);
+  display: flex; flex-direction: column; overflow: hidden;
+}
+.modal-head {
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;
+  padding: calc(var(--space) * 0.9); border-bottom: 3px solid var(--border);
+}
+.modal-head h3 { font-size: var(--step-1); font-weight: 700; }
+.modal-head .sub { font-family: var(--font-mono); font-size: 0.72rem; margin-top: 0.3rem; }
+.modal-head .close {
+  background: var(--bg); border: 3px solid var(--border); border-radius: 2px;
+  cursor: pointer; color: var(--fg); padding: 0.25rem; display: inline-flex;
+}
+.modal-head .close:hover { background: var(--accent); }
+.modal-body { padding: calc(var(--space) * 1.1); overflow: auto; }
+.modal-foot { display: flex; gap: 0.5rem; padding: calc(var(--space) * 0.8) calc(var(--space) * 0.9); border-top: 3px solid var(--border); background: var(--muted); }
+.modal-foot .btn-primary { flex: 1; }
+
+.fm {
+  display: flex; flex-wrap: wrap; gap: 0.4rem 0.9rem;
+  font-family: var(--font-mono); font-size: 0.72rem;
+  background: var(--bg); border: 2px dashed var(--border); border-radius: 2px;
+  padding: 0.7rem 0.9rem; margin-bottom: 1rem;
+}
+.fm b { font-weight: 700; }
+.fm .kv { display: flex; gap: 0.35rem; }
+
+.md { font-size: var(--step--1); line-height: 1.8; }
+.md h1 { font-size: var(--step-1); margin: 0 0 0.6rem; }
+.md h2 {
+  display: table; padding: 4px 12px; margin: 1.2rem 0 0.5rem;
+  border: 3px solid var(--border); background: var(--bg); border-radius: 2px; font-size: 1rem;
+}
+.md h2::before {
+  content: ""; display: inline-block; width: 9px; height: 9px; margin-right: 8px;
+  vertical-align: 2px; background: var(--accent); border: 2px solid var(--border);
+}
+.md h3 { font-size: 0.98rem; margin: 1rem 0 0.3rem; font-weight: 700; }
+.md p, .md ul, .md ol { margin: 0.5rem 0; }
+.md ul, .md ol { padding-left: 1.4rem; }
+.md li { margin: 0.2rem 0; }
+.md code {
+  font-family: var(--font-mono); font-size: 0.85em; background: var(--bg);
+  padding: 1px 6px; border: 2px dashed var(--border); border-radius: 2px;
+}
+.md pre { background: var(--bg); border: 3px solid var(--border); border-radius: var(--radius); padding: 0.9rem; overflow: auto; margin: 0.7rem 0; }
+.md pre code { background: none; border: none; padding: 0; }
+.md blockquote { border-left: 4px solid var(--accent); padding-left: 0.8rem; margin: 0.6rem 0; }
+.md a { font-weight: 700; text-decoration: none; border-bottom: 3px solid var(--border); }
+.md a:hover { background: var(--accent); }
+.md hr { border: none; border-top: 3px solid var(--border); margin: 1rem 0; }
+.md table { border-collapse: collapse; width: 100%; font-size: 0.9em; margin: 0.6rem 0; border: 3px solid var(--border); }
+.md th, .md td { border: 2px solid var(--border); padding: 0.35rem 0.6rem; text-align: left; }
+.md th { background: var(--muted); }
+
+/* ==== トースト ==== */
+#toast {
+  position: fixed; left: 50%; bottom: 24px;
+  transform: translateX(-50%) translateY(160%);
+  background: var(--fg); color: var(--bg); font-weight: 700;
+  font-size: var(--step--1); padding: 0.7rem 1.2rem; border-radius: 2px;
+  border: 3px solid var(--border);
+  transition: transform 0.25s ease; z-index: 80; max-width: 90vw; text-align: center;
+}
+#toast.show { transform: translateX(-50%) translateY(0); }
+
+/* ==== フッター ==== */
+footer {
+  margin-top: 30px; padding-top: 16px;
+  border-top: 4px solid var(--border);
+  font-family: var(--font-mono); font-size: 0.85rem;
+}
+footer a { font-weight: 700; text-decoration: none; border-bottom: 3px solid var(--border); padding: 0 2px; }
+footer a:hover { background: var(--accent); }
+
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+@media (max-width: 640px) {
+  .frame { margin: 14px; padding: 20px 16px 30px; border-width: 4px; }
+  .hero-title { font-size: 1.8rem; }
+  .hero-cta { flex-direction: column; align-items: stretch; }
+  .hero-cta .btn { text-align: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .card, #toast, .btn { transition: none; }
+}
+
+@media print {
+  body { background: #fff; }
+  .card, .modal-card { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#skills">スキル一覧へスキップ</a>
+
+<div class="frame">
+
+  <header class="lp-masthead">
+    <span class="lp-brand">skills-seedling</span>
+    <span class="lp-tag">EDITOR LAUNCHER · PWA</span>
+  </header>
+
+  <div class="hero">
+    <h1 class="hero-title">SKILLS.md Editor</h1>
+    <p class="hero-subtitle">
+      SKILLS.md を選ぶと <strong>Right-Stuff Editor</strong> を新しいタブで開き、本文 Markdown をクリップボードへコピーします。プレビューで内容を確認してから貼り付けられます。
+    </p>
+    <div class="hero-cta">
+      <a class="btn btn-ghost" href="./">← コレクション</a>
+      <a class="btn btn-ghost" href="https://right-stuff-editor.vercel.app/editor" target="_blank" rel="noopener noreferrer">エディタを開く ↗</a>
+      <button id="install-btn" type="button" aria-label="アプリをインストール">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+        インストール
+      </button>
+    </div>
+  </div>
+
+  <main id="skills">
+    <div class="note">
+      <strong>使い方</strong>: スキルを選んで「エディタで開く」を押すと、エディタのタブとクリップボードの両方に本文が入ります。<code>Ctrl/Cmd + V</code> で貼り付けてください。「プレビュー」で内容を確認できます。配布用の URL は <code id="editor-url"></code>。
+    </div>
+
+    <div class="toolbar" role="search">
+      <div class="search-row">
+        <div class="search-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input id="search" type="search" placeholder="スキル名・タグ・説明で絞り込み…" aria-label="スキルを検索" autocomplete="off">
+          <kbd>/</kbd>
+        </div>
+        <span class="status" id="status" aria-live="polite">読み込み中…</span>
+      </div>
+      <div class="pills" id="pills" role="group" aria-label="カテゴリで絞り込み"></div>
+    </div>
+
+    <div id="sections"></div>
+  </main>
+
+  <footer>
+    <p>SKILLS.md Collection — Editor Launcher. <a href="./">Collection</a></p>
+  </footer>
+
+</div>
+
+<div id="modal" aria-hidden="true">
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-head">
+      <div>
+        <h3 id="modal-title">Preview</h3>
+        <div class="sub" id="modal-sub"></div>
+      </div>
+      <button class="close" id="modal-close" type="button" aria-label="閉じる">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+    <div class="modal-foot">
+      <button class="btn btn-primary" id="modal-open" type="button">エディタで開く</button>
+      <button class="btn btn-ghost" id="modal-copy" type="button">Markdown をコピー</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<noscript><p style="text-align:center;padding:2rem">このページの利用には JavaScript が必要です。</p></noscript>
+
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+<script>
+const FALLBACK_RAW_BASE = "https://cdn.jsdelivr.net/gh/watanabe3tipapa/skills-seedling@main/";
+const DEFAULT_EDITOR_URL = "https://right-stuff-editor.vercel.app/editor";
+let EDITOR_URL = DEFAULT_EDITOR_URL;
+let RAW_BASE = FALLBACK_RAW_BASE;
+const cache = new Map();
+
+const $sections = document.getElementById("sections");
+const $status = document.getElementById("status");
+const $search = document.getElementById("search");
+const $pills = document.getElementById("pills");
+const $editorUrl = document.getElementById("editor-url");
+const $toast = document.getElementById("toast");
+const $modal = document.getElementById("modal");
+const $modalBody = document.getElementById("modal-body");
+const $modalTitle = document.getElementById("modal-title");
+const $modalSub = document.getElementById("modal-sub");
+const $modalOpen = document.getElementById("modal-open");
+const $modalCopy = document.getElementById("modal-copy");
+
+let manifestRef = null;
+let filterCat = "all";
+let lastFocus = null;
+
+function toast(msg) {
+  $toast.textContent = msg;
+  $toast.classList.add("show");
+  clearTimeout(toast._t);
+  toast._t = setTimeout(() => $toast.classList.remove("show"), 2800);
+}
+
+function parseFrontmatter(text) {
+  const m = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?/.exec(text);
+  if (!m) return { data: {}, body: text };
+  const data = {};
+  for (const line of m[1].split(/\r?\n/)) {
+    const s = line.trim();
+    if (!s || s.startsWith("#")) continue;
+    const i = s.indexOf(":");
+    if (i === -1) continue;
+    const k = s.slice(0, i).trim();
+    let v = s.slice(i + 1).trim();
+    if (v.startsWith("[") && v.endsWith("]")) {
+      v = v.slice(1, -1).split(",").map((x) => x.trim().replace(/^["']|["']$/g, "")).filter(Boolean);
+    } else {
+      v = v.replace(/^["']|["']$/g, "");
+    }
+    data[k] = v;
+  }
+  return { data, body: text.slice(m[0].length) };
+}
+
+async function fetchText(path) {
+  if (cache.has(path)) return cache.get(path);
+  const candidates = [path, RAW_BASE + path];
+  let lastErr;
+  for (const url of candidates) {
+    try {
+      const res = await fetch(url, { cache: "no-cache" });
+      if (!res.ok) throw new Error(res.status + " " + url);
+      const text = await res.text();
+      cache.set(path, text);
+      return text;
+    } catch (err) {
+      lastErr = err;
+    }
+  }
+  throw lastErr || new Error("fetch failed");
+}
+
+async function copyText(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+  } catch (_) {}
+  try {
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand("copy");
+    document.body.removeChild(ta);
+    return ok;
+  } catch (_) {
+    return false;
+  }
+}
+
+function flashCopied(btn, label) {
+  const original = btn.dataset.label || btn.textContent;
+  btn.dataset.label = original;
+  btn.classList.add("copied");
+  btn.textContent = label || "コピー済み";
+  clearTimeout(btn._t);
+  btn._t = setTimeout(() => {
+    btn.classList.remove("copied");
+    btn.textContent = original;
+  }, 1600);
+}
+
+function markdownToHtml(body) {
+  if (window.marked && window.DOMPurify) {
+    try {
+      const raw = window.marked.parse(body, { mangle: false, headerIds: false });
+      return window.DOMPurify.sanitize(raw, { USE_PROFILES: { html: true } });
+    } catch (_) {}
+  }
+  const pre = document.createElement("pre");
+  pre.textContent = body;
+  return pre.outerHTML;
+}
+
+function openInEditor(skill) {
+  const text = cache.get(skill.path);
+  const win = window.open(EDITOR_URL, "_blank", "noopener,noreferrer");
+  if (text == null) {
+    toast("本文の読み込みに失敗しました。コピーをお試しください。");
+    return;
+  }
+  copyText(text).then((ok) => {
+    toast(ok ? "本文をコピーしました。エディタに貼り付けてください。"
+             : "エディタを開きました。コピーは失敗したので手動でお願いします。");
+  });
+  if (!win) toast("ポップアップがブロックされました。");
+}
+
+function openModal(skill) {
+  const text = cache.get(skill.path);
+  if (text == null) { toast("本文の読み込みに失敗しました。"); return; }
+  const { data, body } = parseFrontmatter(text);
+
+  $modalTitle.textContent = skill.name;
+  const bits = [];
+  bits.push(data.category || "—");
+  if (data.version) bits.push("v" + data.version);
+  if (data.updated) bits.push("updated " + data.updated);
+  $modalSub.textContent = bits.join(" · ") + (skill.path ? " · " + skill.path : "");
+
+  const fm = document.createElement("div");
+  fm.className = "fm";
+  const fields = [
+    ["category", data.category],
+    ["tags", Array.isArray(data.tags) ? data.tags.join(", ") : data.tags],
+    ["version", data.version],
+    ["updated", data.updated],
+    ["lang", skill.lang],
+    ["scope", skill.scope],
+    ["variety", skill.variety],
+    ["path", skill.path],
+  ].filter(([, v]) => v);
+  for (const [k, v] of fields) {
+    const span = document.createElement("span");
+    span.className = "kv";
+    const b = document.createElement("b");
+    b.textContent = k + ":";
+    const val = document.createElement("span");
+    val.textContent = v;
+    span.append(b, val);
+    fm.appendChild(span);
+  }
+
+  const md = document.createElement("div");
+  md.className = "md";
+  md.innerHTML = markdownToHtml(body);
+
+  $modalBody.replaceChildren(fm, md);
+
+  $modalOpen.onclick = () => { openInEditor(skill); closeModal(); };
+  $modalCopy.onclick = async () => {
+    const ok = await copyText(text);
+    if (ok) flashCopied($modalCopy, "コピー済み");
+    toast(ok ? "Markdown をコピーしました。" : "コピーに失敗しました。");
+  };
+
+  lastFocus = document.activeElement;
+  $modal.classList.add("show");
+  $modal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-open");
+  document.getElementById("modal-close").focus();
+}
+
+function closeModal() {
+  $modal.classList.remove("show");
+  $modal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("modal-open");
+  if (lastFocus && lastFocus.focus) lastFocus.focus();
+}
+
+function skillCard(skill) {
+  const card = document.createElement("article");
+  card.className = "card";
+
+  const h3 = document.createElement("h3");
+  const name = document.createElement("span");
+  name.className = "name";
+  name.textContent = skill.name;
+  h3.appendChild(name);
+  if (skill.version) {
+    const v = document.createElement("span");
+    v.className = "ver";
+    v.textContent = "v" + skill.version;
+    h3.appendChild(v);
+  }
+
+  const meta = document.createElement("div");
+  meta.className = "meta";
+  const cat = manifestRef.categories.find((c) => c.skills.includes(skill));
+  meta.textContent = (cat ? cat.label : "") + (skill.updated ? " · " + skill.updated : "");
+  const dialect = skill.variety || (skill.lang && skill.lang.includes("-") ? skill.lang : "");
+  if (dialect) {
+    const v = document.createElement("span");
+    v.className = "variety";
+    v.textContent = " · ことば: " + dialect;
+    meta.appendChild(v);
+  }
+
+  const p = document.createElement("p");
+  p.textContent = skill.description || "説明は未設定です。";
+
+  const tags = document.createElement("div");
+  tags.className = "tags";
+  for (const t of skill.tags || []) {
+    const s = document.createElement("button");
+    s.className = "tag";
+    s.type = "button";
+    s.textContent = t;
+    s.title = "このタグで絞り込み";
+    s.addEventListener("click", () => {
+      $search.value = t;
+      applyFilters();
+      $search.focus();
+    });
+    tags.appendChild(s);
+  }
+
+  const actions = document.createElement("div");
+  actions.className = "actions";
+
+  const openBtn = document.createElement("button");
+  openBtn.className = "btn btn-primary";
+  openBtn.type = "button";
+  openBtn.innerHTML = 'エディタで開く';
+  openBtn.addEventListener("click", () => openInEditor(skill));
+
+  const prevBtn = document.createElement("button");
+  prevBtn.className = "btn btn-ghost";
+  prevBtn.type = "button";
+  prevBtn.textContent = "プレビュー";
+  prevBtn.addEventListener("click", () => openModal(skill));
+
+  const copyBtn = document.createElement("button");
+  copyBtn.className = "btn btn-ghost btn-icon";
+  copyBtn.type = "button";
+  copyBtn.title = "Markdown をコピー";
+  copyBtn.setAttribute("aria-label", "Markdown をコピー");
+  copyBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>';
+  copyBtn.addEventListener("click", async () => {
+    let text = cache.get(skill.path);
+    if (text == null) {
+      try { text = await fetchText(skill.path); } catch (_) { toast("コピーに失敗しました。"); return; }
+    }
+    const ok = await copyText(text);
+    if (ok) flashCopied(copyBtn, "✓");
+    toast(ok ? "本文をコピーしました。" : "コピーに失敗しました。");
+  });
+
+  actions.append(openBtn, prevBtn, copyBtn);
+  card.append(h3, meta, p, tags, actions);
+  return card;
+}
+
+function matches(skill, q) {
+  if (!q) return true;
+  return [skill.name, skill.description, (skill.tags || []).join(" ")].join(" ").toLowerCase().includes(q);
+}
+
+function applyFilters() {
+  const q = $search.value.trim().toLowerCase();
+  $sections.replaceChildren();
+  let total = 0;
+
+  for (const cat of manifestRef.categories) {
+    if (filterCat !== "all" && cat.id !== filterCat) continue;
+    const skills = cat.skills.filter((s) => matches(s, q));
+    if (!skills.length) continue;
+    total += skills.length;
+
+    const section = document.createElement("section");
+    section.id = "cat-" + cat.id;
+    const h2 = document.createElement("h2");
+    h2.textContent = cat.label;
+    const count = document.createElement("span");
+    count.className = "count";
+    count.textContent = String(skills.length).padStart(2, "0");
+    h2.appendChild(count);
+
+    const grid = document.createElement("div");
+    grid.className = "cards";
+    for (const s of skills) grid.appendChild(skillCard(s));
+
+    section.append(h2, grid);
+    $sections.appendChild(section);
+  }
+
+  if (total === 0) {
+    const empty = document.createElement("div");
+    empty.className = "empty";
+    empty.textContent = "該当するスキルがありません。";
+    $sections.appendChild(empty);
+  }
+  $status.textContent = total + " / " + manifestRef.total + " skills";
+}
+
+function renderPills() {
+  const cats = [{ id: "all", label: "すべて", n: manifestRef.total }];
+  for (const c of manifestRef.categories) cats.push({ id: c.id, label: c.label, n: c.skills.length });
+  $pills.replaceChildren();
+  for (const c of cats) {
+    const b = document.createElement("button");
+    b.className = "pill";
+    b.type = "button";
+    b.setAttribute("aria-pressed", String(filterCat === c.id));
+    b.innerHTML = "";
+    b.append(c.label);
+    const n = document.createElement("span");
+    n.className = "n";
+    n.textContent = c.n;
+    b.appendChild(n);
+    b.addEventListener("click", () => {
+      filterCat = c.id;
+      for (const el of $pills.children) el.setAttribute("aria-pressed", String(el === b));
+      applyFilters();
+    });
+    $pills.appendChild(b);
+  }
+}
+
+function setupInstall() {
+  let deferred = null;
+  const btn = document.getElementById("install-btn");
+  window.addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault();
+    deferred = e;
+    btn.classList.add("show");
+  });
+  btn.addEventListener("click", async () => {
+    if (!deferred) return;
+    deferred.prompt();
+    await deferred.userChoice;
+    deferred = null;
+    btn.classList.remove("show");
+  });
+  window.addEventListener("appinstalled", () => { btn.classList.remove("show"); toast("インストールしました。"); });
+}
+
+function setupKeyboard() {
+  document.addEventListener("keydown", (e) => {
+    const typing = /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName);
+    if (e.key === "/" && !typing) { e.preventDefault(); $search.focus(); return; }
+    if (e.key === "Escape") {
+      if ($modal.classList.contains("show")) closeModal();
+      else if (document.activeElement === $search) { $search.value = ""; applyFilters(); $search.blur(); }
+    }
+  });
+  $search.addEventListener("input", applyFilters);
+  document.getElementById("modal-close").addEventListener("click", closeModal);
+  $modal.addEventListener("click", (e) => { if (e.target === $modal) closeModal(); });
+}
+
+async function init() {
+  setupInstall();
+  setupKeyboard();
+
+  let manifest;
+  try {
+    const res = await fetch("./skills/manifest.json", { cache: "no-cache" });
+    if (!res.ok) throw new Error(res.status);
+    manifest = await res.json();
+  } catch (err) {
+    $status.textContent = "manifest.json を読み込めません";
+    $sections.innerHTML = '<div class="empty">skills/manifest.json を読み込めませんでした。<br>ローカルで開く場合は <span class="mono">npx serve</span> などで HTTP 配信してください。</div>';
+    return;
+  }
+
+  EDITOR_URL = manifest.editor || DEFAULT_EDITOR_URL;
+  RAW_BASE = manifest.rawBase || FALLBACK_RAW_BASE;
+  $editorUrl.textContent = EDITOR_URL;
+
+  manifestRef = manifest;
+  manifestRef.total = manifest.categories.reduce((n, c) => n + c.skills.length, 0);
+
+  renderPills();
+  applyFilters();
+
+  const all = manifest.categories.flatMap((c) => c.skills);
+  await Promise.allSettled(all.map((s) => fetchText(s.path)));
+  $status.textContent = manifestRef.total + " / " + manifestRef.total + " skills";
+}
+
+init();
+
+if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js").catch(() => {});
+  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SKILLS.md Collection</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* brutalist theme — quarto-plus (themes/site.css) に倣う */
+:root {
+  --bg: #ffffff;
+  --fg: #0b0b0b;
+  --accent: #00e5a8;
+  --muted: #f2f2f2;
+  --border: #0b0b0b;
+  --radius: 4px;
+  --font-ui: Inter, "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  --font-mono: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, "Noto Mono", monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-ui);
+  -webkit-font-smoothing: antialiased;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.75;
+  font-size: 1.0625rem;
+}
+
+.mono { font-family: var(--font-mono); }
+a { color: inherit; }
+
+/* ==== アプリ枠 ==== */
+.frame {
+  max-width: 980px;
+  margin: 28px auto 48px;
+  padding: 26px 28px 40px;
+  border: 6px solid var(--border);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, var(--muted), transparent 40%);
+}
+
+/* ==== マストヘッド ==== */
+.lp-masthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.lp-brand {
+  display: inline-block;
+  padding: 4px 12px;
+  border: 3px solid var(--border);
+  background: var(--bg);
+  border-radius: 2px;
+  font-weight: 700;
+}
+
+.lp-tag {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  border: 2px solid var(--border);
+  background: var(--muted);
+  border-radius: 2px;
+}
+
+/* ==== ヒーロー ==== */
+.hero { margin: 0 0 26px; }
+
+.hero-title {
+  display: inline-block;
+  margin: 0 0 16px;
+  padding: 6px 16px;
+  border: 3px solid var(--border);
+  background: var(--bg);
+  border-radius: 2px;
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  max-width: 56ch;
+  margin: 0 0 20px;
+}
+
+.hero-cta { display: flex; flex-wrap: wrap; gap: 10px; }
+
+/* ==== ナビ ==== */
+.lp-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 30px; }
+
+.lp-nav a {
+  padding: 8px 14px;
+  border: 4px solid var(--border);
+  background: var(--bg);
+  color: var(--fg);
+  border-radius: 2px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.lp-nav a:hover { background: var(--accent); }
+
+/* ==== ボタン ==== */
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border: 4px solid var(--border);
+  background: var(--accent);
+  color: var(--fg);
+  border-radius: 2px;
+  font-weight: 700;
+  font-family: var(--font-ui);
+  text-decoration: none;
+}
+
+.btn.btn-ghost { background: var(--bg); }
+.btn:hover { background: var(--fg); color: var(--bg); }
+.btn.btn-ghost:hover { background: var(--accent); color: var(--fg); }
+
+/* ==== 本文 ==== */
+main { padding: 0; }
+section { margin-bottom: 40px; }
+
+h2 {
+  display: table;
+  padding: 6px 14px;
+  margin: 38px 0 16px;
+  border: 3px solid var(--border);
+  background: var(--bg);
+  border-radius: 2px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+h2::before {
+  content: "";
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  margin-right: 9px;
+  vertical-align: 2px;
+  background: var(--accent);
+  border: 3px solid var(--border);
+}
+
+.intro { font-size: 1.05rem; max-width: 70ch; margin-bottom: 20px; }
+
+main p a,
+main li a {
+  color: var(--fg);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 3px solid var(--border);
+  padding: 0 2px;
+}
+
+main p a:hover,
+main li a:hover { background: var(--accent); }
+
+code {
+  font-family: var(--font-mono);
+  background: var(--bg);
+  padding: 1px 6px;
+  border: 2px dashed var(--border);
+  border-radius: 2px;
+  font-size: 0.88em;
+}
+
+/* ==== カテゴリカード ==== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.card {
+  border: 4px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  padding: 18px;
+  transition: background 0.15s ease;
+}
+
+.card:hover { background: var(--accent); }
+
+.card-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: inline-block;
+  border: 2px solid var(--border);
+  background: var(--muted);
+  padding: 2px 8px;
+  border-radius: 2px;
+}
+
+.card:hover .card-label { background: var(--bg); }
+
+.card h3 { font-size: 1.15rem; font-weight: 700; margin: 12px 0 8px; }
+.card p { font-size: 0.95rem; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  border: 2px dashed var(--border);
+  padding: 1px 7px;
+  border-radius: 2px;
+  background: var(--bg);
+}
+
+.card:hover .tag { background: var(--bg); }
+
+/* ==== 手順（ステップカード） ==== */
+.steps {
+  counter-reset: step;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.steps li {
+  position: relative;
+  border: 4px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  padding: 16px 18px 16px 66px;
+}
+
+.steps li::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  border: 3px solid var(--border);
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+.steps h4 { font-size: 1.05rem; font-weight: 700; margin-bottom: 4px; }
+.steps p { font-size: 0.95rem; }
+
+/* ==== CTA ==== */
+.cta {
+  border: 4px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  padding: 24px;
+  text-align: center;
+}
+
+.cta h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 8px; }
+.cta p { max-width: 52ch; margin: 0 auto; font-size: 0.98rem; }
+.cta .btn { margin: 16px 5px 0; }
+
+/* ==== フッター ==== */
+footer {
+  margin-top: 34px;
+  padding-top: 18px;
+  border-top: 4px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+/* ==== フォーカス ==== */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ==== レスポンシブ ==== */
+@media (max-width: 640px) {
+  .frame {
+    margin: 14px;
+    padding: 20px 16px 30px;
+    border-width: 4px;
+  }
+
+  .hero-title { font-size: 1.9rem; }
+
+  .hero-cta { flex-direction: column; align-items: stretch; }
+  .hero-cta .btn { text-align: center; }
+
+  .steps li { padding-left: 62px; }
+}
+
+/* ==== モーション抑制 ==== */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .card { transition: none; }
+}
+
+/* ==== 印刷 ==== */
+@media print {
+  body { background: #fff; }
+  .card, .cta, .steps li { break-inside: avoid; }
+}
+@page { size: A4; margin: 18mm; }
+</style>
+</head>
+<body>
+
+<div class="frame">
+
+  <header class="lp-masthead">
+    <span class="lp-brand">skills-seedling</span>
+    <span class="lp-tag">v0.1.0 · SKILLS.md</span>
+  </header>
+
+  <div class="hero">
+    <h1 class="hero-title">SKILLS.md Collection</h1>
+    <p class="hero-subtitle">
+      AIコーディング支援ツールで活用できる SKILLS.md を、開発用途・言語・環境別に体系化したキュレーションリポジトリ。必要なスキル定義を、すぐに探して使えます。
+    </p>
+    <div class="hero-cta">
+      <a class="btn" href="./editor.html">エディタで開く</a>
+      <a class="btn btn-ghost" href="#categories-heading">分類体系を見る</a>
+      <a class="btn btn-ghost" href="https://github.com/watanabe3tipapa/skills-seedling" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+  </div>
+
+  <nav class="lp-nav">
+    <a href="#categories-heading">分類体系</a>
+    <a href="#usage-heading">使い方</a>
+    <a href="#contribute-heading">貢献する</a>
+    <a href="./GLOSSARY.md">用語集</a>
+    <a href="./docs/skill-design.md">設計方針</a>
+  </nav>
+
+  <main>
+
+    <section aria-labelledby="categories-heading">
+      <h2 id="categories-heading">分類体系</h2>
+      <p class="intro">目的や技術スタックに応じて、必要なスキル定義をすぐに見つけられるよう、4つの軸で整理しています。</p>
+      <div class="cards">
+        <article class="card">
+          <span class="card-label">usage.md</span>
+          <h3>開発用途別</h3>
+          <p>Web開発、データ分析、モバイルアプリ、インフラ/DevOpsなど、プロジェクトの目的に応じてスキルを整理。</p>
+          <div class="tags">
+            <span class="tag">frontend</span>
+            <span class="tag">backend</span>
+            <span class="tag">data</span>
+            <span class="tag">devops</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <span class="card-label">language.md</span>
+          <h3>プログラミング言語別</h3>
+          <p>Python、TypeScript、Rust、Goなど、各言語の特性やイディオムに合わせたスキル定義を収録。</p>
+          <div class="tags">
+            <span class="tag">python</span>
+            <span class="tag">typescript</span>
+            <span class="tag">rust</span>
+            <span class="tag">go</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <span class="card-label">environment.md</span>
+          <h3>実行環境別</h3>
+          <p>ローカル開発向けと、クラウド・Webサービス連携向けに分類。環境に最適化されたスキルを提供。</p>
+          <div class="tags">
+            <span class="tag">local</span>
+            <span class="tag">cloud</span>
+            <span class="tag">saas</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <span class="card-label">others.md</span>
+          <h3>その他</h3>
+          <p>フレームワーク固有の設定や、チーム運用向けのガイドラインなど、特別なカテゴリも随時追加。</p>
+          <div class="tags">
+            <span class="tag">framework</span>
+            <span class="tag">team</span>
+            <span class="tag">custom</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="usage-heading">
+      <h2 id="usage-heading">使い方</h2>
+      <ol class="steps">
+        <li>
+          <h4>目的に合ったカテゴリを選択</h4>
+          <p>開発用途、言語、実行環境のいずれかから、プロジェクトに最適な分類を選びます。</p>
+        </li>
+        <li>
+          <h4>必要な SKILLS.md を探す</h4>
+          <p>カテゴリ内で、自分のプロジェクトに合ったスキル定義ファイルを見つけます。</p>
+        </li>
+        <li>
+          <h4>プロジェクトにコピーして活用</h4>
+          <p>ファイルをダウンロードまたはコピーし、AIコーディング支援ツールのスキル設定に読み込ませます。</p>
+        </li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="contribute-heading">
+      <h2 id="contribute-heading">貢献する</h2>
+      <div class="cta">
+        <h3>独自の SKILLS.md を共有しませんか？</h3>
+        <p>自作のスキル定義や、既存の改善案をお持ちの方は、Pull Request や Issue で気軽に共有してください。このコレクションはみなさんの知見で成長します。</p>
+        <a href="./editor.html" class="btn">エディタで開く</a>
+        <a href="https://github.com/watanabe3tipapa/skills-seedling" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">GitHub で参加する</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>SKILLS.md Collection — Curated for developers.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>

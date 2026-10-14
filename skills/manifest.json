@@ -1,0 +1,710 @@
+{
+  "generated": "2026-10-14",
+  "editor": "https://right-stuff-editor.vercel.app/editor",
+  "rawBase": "https://cdn.jsdelivr.net/gh/watanabe3tipapa/skills-seedling@main/",
+  "categories": [
+    {
+      "id": "usage",
+      "label": "開発用途別",
+      "skills": [
+        {
+          "name": "backend-api",
+          "description": "REST / GraphQL / RPC によるサーバサイドAPIの設計と実装を支援するスキル。エンドポイント設計、バリデーション、認証認可、エラーハンドリングの依頼で発動する。",
+          "tags": [
+            "backend",
+            "api",
+            "rest",
+            "graphql",
+            "auth"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/usage/backend-api/SKILLS.md"
+        },
+        {
+          "name": "cli-tool",
+          "description": "コマンドラインアプリ・開発ツールを実装するスキル。引数解析、入出力、終了コード、パイプ対応を支援する。",
+          "tags": [
+            "cli",
+            "tooling",
+            "argument-parsing"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/usage/cli-tool/SKILLS.md"
+        },
+        {
+          "name": "data-analysis",
+          "description": "Python / SQL / ノートブックを用いたデータ分析・可視化を支援するスキル。探索的データ分析、集計、指標設計、レポート作成の依頼で発動する。",
+          "tags": [
+            "data",
+            "analysis",
+            "pandas",
+            "sql",
+            "visualization"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/usage/data-analysis/SKILLS.md"
+        },
+        {
+          "name": "database-design",
+          "description": "データベースのスキーマ設計・マイグレーション・クエリ改善を支援するスキル。正規化、インデックス、整合性を扱う。",
+          "tags": [
+            "database",
+            "sql",
+            "schema",
+            "migration",
+            "indexing"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/usage/database-design/SKILLS.md"
+        },
+        {
+          "name": "devops-infrastructure",
+          "description": "CI/CD、コンテナ、IaC、監視などインフラ/DevOpsの構築と運用を支援するスキル。パイプライン構築、デプロイ自動化、障害対応の依頼で発動する。",
+          "tags": [
+            "devops",
+            "ci-cd",
+            "docker",
+            "kubernetes",
+            "terraform"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/usage/devops-infrastructure/SKILLS.md"
+        },
+        {
+          "name": "frontend-development",
+          "description": "React / Vue / Svelte などによるフロントエンド実装を支援するスキル。コンポーネント設計、状態管理、アクセシビリティ、パフォーマンス最適化を含むUI実装の依頼で発動する。",
+          "tags": [
+            "frontend",
+            "react",
+            "vue",
+            "svelte",
+            "accessibility",
+            "performance"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/usage/frontend-development/SKILLS.md"
+        },
+        {
+          "name": "legacy-migration",
+          "description": "レガシーコード・旧システムの移行を支援するスキル。段階的移行、ストラングラー、互換レイヤ、回帰リスクの管理を行う。",
+          "tags": [
+            "migration",
+            "legacy",
+            "refactoring",
+            "strategy"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/usage/legacy-migration/SKILLS.md"
+        },
+        {
+          "name": "machine-learning",
+          "description": "機械学習モデルの学習・評価・推論の実装を支援するスキル。データ分割、特徴量、評価指標、再現性、実験管理の依頼で発動する。",
+          "tags": [
+            "ml",
+            "ai",
+            "training",
+            "evaluation",
+            "mlops"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/usage/machine-learning/SKILLS.md"
+        },
+        {
+          "name": "mobile-app",
+          "description": "iOS / Android などのモバイルアプリ実装を支援するスキル。画面遷移、オフライン対応、ライフサイクル、ストア要件を扱う。",
+          "tags": [
+            "mobile",
+            "ios",
+            "android",
+            "react-native",
+            "flutter"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/usage/mobile-app/SKILLS.md"
+        },
+        {
+          "name": "observability",
+          "description": "ログ・メトリクス・トレースを用いた可観測性の設計・実装を支援するスキル。計装、構造化ログ、アラート設計の依頼で発動する。",
+          "tags": [
+            "observability",
+            "logging",
+            "metrics",
+            "tracing"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/usage/observability/SKILLS.md"
+        },
+        {
+          "name": "realtime-communication",
+          "description": "WebSocket / SSE / リアルタイム同期の実装を支援するスキル。接続管理、再接続、スケーリング、整合性の依頼で発動する。",
+          "tags": [
+            "realtime",
+            "websocket",
+            "sse",
+            "sync"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/usage/realtime-communication/SKILLS.md"
+        },
+        {
+          "name": "web-scraping",
+          "description": "Web スクレイピング・クローラの実装を支援するスキル。取得の作法、robots/利用規約の尊重、レート制限、パース安定性の依頼で発動する。",
+          "tags": [
+            "scraping",
+            "crawler",
+            "http",
+            "parsing"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/usage/web-scraping/SKILLS.md"
+        }
+      ]
+    },
+    {
+      "id": "language",
+      "label": "プログラミング言語別",
+      "skills": [
+        {
+          "name": "csharp",
+          "description": "C#/.NET のコードを書く・直す際のスキル。型付け、async/await、LINQ、DI に沿って実装を支援する。",
+          "tags": [
+            "csharp",
+            "dotnet",
+            "async",
+            "linq"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/language/csharp/SKILLS.md"
+        },
+        {
+          "name": "go",
+          "description": "Go のコードを書く・直す際のスキル。エラーハンドリング、並行処理、インターフェース設計、go vet に沿って実装を支援する。",
+          "tags": [
+            "go",
+            "golang",
+            "concurrency",
+            "interfaces"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/language/go/SKILLS.md"
+        },
+        {
+          "name": "java",
+          "description": "Java のコードを書く・直す際のスキル。型付け、例外設計、コレクション、並行処理、ビルドツールに沿って実装を支援する。",
+          "tags": [
+            "java",
+            "jvm",
+            "maven",
+            "gradle"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/language/java/SKILLS.md"
+        },
+        {
+          "name": "kotlin",
+          "description": "Kotlin のコードを書く・直す際のスキル。null 安全、データクラス、コルーチン、Gradle に沿って実装を支援する。",
+          "tags": [
+            "kotlin",
+            "android",
+            "coroutines",
+            "jvm"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/language/kotlin/SKILLS.md"
+        },
+        {
+          "name": "php",
+          "description": "PHP のコードを書く・直す際のスキル。型宣言、Composer、フレームワーク規約、セキュリティに沿って実装を支援する。",
+          "tags": [
+            "php",
+            "composer",
+            "laravel",
+            "wordpress"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/language/php/SKILLS.md"
+        },
+        {
+          "name": "python",
+          "description": "Python のコードを書く・直す際のスキル。型ヒント、venv、pytest、パッケージ管理、慣用的な書き方に沿って実装を支援する。",
+          "tags": [
+            "python",
+            "typing",
+            "pytest",
+            "packaging"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/language/python/SKILLS.md"
+        },
+        {
+          "name": "ruby",
+          "description": "Ruby のコードを書く・直す際のスキル。慣用句、ブロック、例外、Bundler、Rails 規約に沿って実装を支援する。",
+          "tags": [
+            "ruby",
+            "rails",
+            "bundler",
+            "gem"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/language/ruby/SKILLS.md"
+        },
+        {
+          "name": "rust",
+          "description": "Rust のコードを書く・直す際のスキル。所有権・借用、エラー処理、トレイト、clippy に沿って実装を支援する。",
+          "tags": [
+            "rust",
+            "ownership",
+            "cargo",
+            "clippy"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/language/rust/SKILLS.md"
+        },
+        {
+          "name": "shell-bash",
+          "description": "Bash / Zsh スクリプトを書く・直す際のスキル。安全なオプション、クォート、エラー処理、移植性に配慮したスクリプトを支援する。",
+          "tags": [
+            "bash",
+            "shell",
+            "zsh",
+            "scripting"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/language/shell-bash/SKILLS.md"
+        },
+        {
+          "name": "sql",
+          "description": "SQL を書く・直す際のスキル。JOIN、集計、ウィンドウ関数、実行計画を踏まえた読みやすく効率的なクエリを支援する。",
+          "tags": [
+            "sql",
+            "query",
+            "postgres",
+            "mysql"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/language/sql/SKILLS.md"
+        },
+        {
+          "name": "swift",
+          "description": "Swift のコードを書く・直す際のスキル。Optional、値型、並行処理、SwiftUI/UIKit 規約に沿って実装を支援する。",
+          "tags": [
+            "swift",
+            "ios",
+            "swiftui",
+            "apple"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/language/swift/SKILLS.md"
+        },
+        {
+          "name": "typescript",
+          "description": "TypeScript のコードを書く・直す際のスキル。厳格な型付け、型ガード、ジェネリクス、モジュール構成に沿って実装を支援する。",
+          "tags": [
+            "typescript",
+            "types",
+            "node",
+            "frontend"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/language/typescript/SKILLS.md"
+        }
+      ]
+    },
+    {
+      "id": "environment",
+      "label": "実行環境別",
+      "skills": [
+        {
+          "name": "browser-extension",
+          "description": "ブラウザ拡張機能の実装を支援するスキル。Manifest、権限最小化、コンテンツスクリプト、メッセージ通信、審査要件を扱う。",
+          "tags": [
+            "browser",
+            "extension",
+            "chrome",
+            "web"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/environment/browser-extension/SKILLS.md"
+        },
+        {
+          "name": "cloud-native",
+          "description": "クラウド上での設計・デプロイ・運用を支援するスキル。マネージドサービス選定、スケーリング、可観測性、コストの依頼で発動する。",
+          "tags": [
+            "cloud",
+            "aws",
+            "gcp",
+            "azure",
+            "serverless"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/environment/cloud-native/SKILLS.md"
+        },
+        {
+          "name": "desktop-app",
+          "description": "デスクトップアプリ（Electron/Tauri など）の実装を支援するスキル。プロセス分離、IPC、自動更新、署名・配布を扱う。",
+          "tags": [
+            "desktop",
+            "electron",
+            "tauri",
+            "cross-platform"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/environment/desktop-app/SKILLS.md"
+        },
+        {
+          "name": "edge-computing",
+          "description": "CDN エッジ・エッジ関数での実行を支援するスキル。ランタイム制約、キャッシュ、地理分散、コールドスタートの考慮を行う。",
+          "tags": [
+            "edge",
+            "cdn",
+            "serverless",
+            "caching"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/environment/edge-computing/SKILLS.md"
+        },
+        {
+          "name": "local-development",
+          "description": "ローカル開発環境の構築・再現性確保を支援するスキル。開発サーバ、環境変数、devcontainer、依存のセットアップの依頼で発動する。",
+          "tags": [
+            "local",
+            "devcontainer",
+            "env",
+            "setup"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/environment/local-development/SKILLS.md"
+        },
+        {
+          "name": "saas-integration",
+          "description": "外部SaaS・API連携の実装を支援するスキル。OAuth、Webhook、レート制限、リトライ、データ同期の依頼で発動する。",
+          "tags": [
+            "saas",
+            "api",
+            "oauth",
+            "webhook",
+            "integration"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/environment/saas-integration/SKILLS.md"
+        },
+        {
+          "name": "serverless",
+          "description": "サーバレス（FaaS）アーキテクチャの設計・実装を支援するスキル。コールドスタート、冪等性、イベント駆動、コストを扱う。",
+          "tags": [
+            "serverless",
+            "faas",
+            "lambda",
+            "event-driven"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/environment/serverless/SKILLS.md"
+        }
+      ]
+    },
+    {
+      "id": "others",
+      "label": "その他",
+      "skills": [
+        {
+          "name": "accessibility",
+          "description": "アクセシビリティ（a11y）を考慮したUI実装・レビューを行うスキル。セマンティクス、キーボード操作、ARIA、コントラストを支援する。",
+          "tags": [
+            "a11y",
+            "accessibility",
+            "wcag",
+            "ui"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/others/accessibility/SKILLS.md"
+        },
+        {
+          "name": "code-review",
+          "description": "コードレビューを行う際のスキル。可読性、設計、テスト、セキュリティの観点で、建設的で具体的な指摘を行う。",
+          "tags": [
+            "review",
+            "quality",
+            "best-practices"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/others/code-review/SKILLS.md"
+        },
+        {
+          "name": "documentation",
+          "description": "ドキュメントを書く・整える際のスキル。README、API リファレンス、コメント、変更履歴を読み手視点で整備する。",
+          "tags": [
+            "docs",
+            "readme",
+            "comments",
+            "writing"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/others/documentation/SKILLS.md"
+        },
+        {
+          "name": "git-workflow",
+          "description": "Git の運用を支援するスキル。ブランチ戦略、コミット粒度、レビュー、コンフリクト解消、履歴整理の依頼で発動する。",
+          "tags": [
+            "git",
+            "branch",
+            "commit",
+            "workflow"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/others/git-workflow/SKILLS.md"
+        },
+        {
+          "name": "i18n",
+          "description": "国際化・地域化（i18n/l10n）を支援するスキル。文言外部化、複数形、日付・通貨、レイアウト対応の依頼で発動する。",
+          "tags": [
+            "i18n",
+            "l10n",
+            "localization",
+            "unicode"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/others/i18n/SKILLS.md"
+        },
+        {
+          "name": "incident-response",
+          "description": "障害対応・ポストモーテムを支援するスキル。初動、切り分け、緩和、復旧、再発防止の依頼で発動する。",
+          "tags": [
+            "incident",
+            "sre",
+            "oncall",
+            "postmortem"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/others/incident-response/SKILLS.md"
+        },
+        {
+          "name": "performance-optimization",
+          "description": "アプリケーションの性能を計測・改善するスキル。ボトルネック特定、アルゴリズム、キャッシュ、レンダリング最適化を支援する。",
+          "tags": [
+            "performance",
+            "profiling",
+            "caching",
+            "optimization"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/others/performance-optimization/SKILLS.md"
+        },
+        {
+          "name": "refactoring",
+          "description": "既存コードを安全に整理・改善するスキル。重複排除、責務分割、命名改善を、挙動を変えずに進める。",
+          "tags": [
+            "refactoring",
+            "clean-code",
+            "maintainability"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/others/refactoring/SKILLS.md"
+        },
+        {
+          "name": "release-management",
+          "description": "リリース作業・バージョン管理を支援するスキル。セマンティックバージョニング、チェンジログ、タグ、ロールバックを扱う。",
+          "tags": [
+            "release",
+            "versioning",
+            "changelog",
+            "semver"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/others/release-management/SKILLS.md"
+        },
+        {
+          "name": "security",
+          "description": "セキュリティを考慮した実装・レビューを行うスキル。入力検証、認可、シークレット管理、依存の脆弱性対応を支援する。",
+          "tags": [
+            "security",
+            "owasp",
+            "secrets",
+            "authz"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/others/security/SKILLS.md"
+        },
+        {
+          "name": "testing",
+          "description": "テストを書く・改善する際のスキル。テスト戦略、境界値、モック、カバレッジを踏まえて信頼できるテストを設計する。",
+          "tags": [
+            "testing",
+            "tdd",
+            "coverage",
+            "quality"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-14",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/others/testing/SKILLS.md"
+        }
+      ]
+    }
+  ]
+}
