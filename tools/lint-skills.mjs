@@ -26,7 +26,7 @@ const STRICT = ARGS.includes("--strict");
 const JSON_OUT = ARGS.includes("--json");
 const FRESH_DAYS = 180;
 
-const CATEGORIES = ["usage", "language", "markup", "environment", "others"];
+const CATEGORIES = ["usage", "language", "markup", "environment", "apple", "others"];
 const SCOPES = ["team", "project", "shared", "canonical"];
 
 // 意図 → 許容する見出しの別名（日本語・口語・英語）。順序は本文の推奨順。

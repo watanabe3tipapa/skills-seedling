@@ -13,9 +13,10 @@ const CATEGORY_LABELS = {
   language: "プログラミング言語別",
   markup: "マークアップ言語別",
   environment: "実行環境別",
+  apple: "Apple エコシステム別",
   others: "その他",
 };
-const CATEGORY_ORDER = ["usage", "language", "markup", "environment", "others"];
+const CATEGORY_ORDER = ["usage", "language", "markup", "environment", "apple", "others"];
 
 function parseFrontmatter(text) {
   const match = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?/.exec(text);

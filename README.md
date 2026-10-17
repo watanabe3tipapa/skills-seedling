@@ -14,7 +14,7 @@ skills-seedling は、AI コーディング支援ツールで活用できる **S
 
 ## 概要
 
-skills-seedling は、目的や技術スタックに応じて必要なスキル定義をすぐに見つけられるよう、SKILLS.md を **5 つの軸**（開発用途 / プログラミング言語 / マークアップ言語 / 実行環境 / その他）で整理したコレクションです。スキル定義を単なるコピー元ではなく「育てる」対象に置き、レビューと更新を通して鮮度と再利用性を保つことを目的としています。
+skills-seedling は、目的や技術スタックに応じて必要なスキル定義をすぐに見つけられるよう、SKILLS.md を **6 つの軸**（開発用途 / プログラミング言語 / マークアップ言語 / 実行環境 / Apple エコシステム / その他）で整理したコレクションです。スキル定義を単なるコピー元ではなく「育てる」対象に置き、レビューと更新を通して鮮度と再利用性を保つことを目的としています。
 
 本リポジトリの根底にあるのは、**自然言語としての「日本語」の特性を、計算機（ツール・型・検索・LLM）とどう噛み合わせるか**という問いです。意味の層だけを機械可読にし、表記は手放さない 3 層設計は、そのマッチングを良くしていくための試みであり、完成形ではありません。良策は探求の途上にあり、このリポジトリはその知見を持ち寄って育てていく場です。
 
@@ -33,7 +33,7 @@ skills-seedling は、目的や技術スタックに応じて必要なスキル�
 
 ## 主な特徴
 
-- 5 つの軸で整理された分類体系
+- 6 つの軸で整理された分類体系
 - スキルは `skills/<軸>/<スキル名>/SKILLS.md` に 1 概念 1 ファイルで収録
 - `skills/manifest.json` を自動生成し、一覧・検索・ランチャーに利用
 - AI コーディング支援ツール（エージェント）にそのまま渡せる SKILLS.md
@@ -51,6 +51,7 @@ skills-seedling は、目的や技術スタックに応じて必要なスキル�
 | プログラミング言語別 | `skills/language/` | Python、TypeScript、Go、Rust、C / C++、JavaScript、R、COBOL など |
 | マークアップ言語別 | `skills/markup/` | Markdown（.md）、Quarto（.qmd）、AsciiDoc、reStructuredText、HTML、LaTeX、Mermaid など |
 | 実行環境別 | `skills/environment/` | ローカル開発、クラウド、SaaS 連携 |
+| Apple エコシステム別 | `skills/apple/` | Apple Notes（基本操作、音声入力、Siri、手書き、自動化、同期・安全 など） |
 | その他 | `skills/others/` | レビュー、テスト、セキュリティ、ドキュメントなど |
 
 索引は `skills/manifest.json` に自動生成されます（`node tools/build-manifest.mjs`）。
@@ -63,6 +64,7 @@ skills-seedling は、目的や技術スタックに応じて必要なスキル�
 |---|---|
 | Python 特集 | `language/python` ＋ `usage/data-analysis` / `usage/machine-learning` / `usage/web-scraping` / `usage/backend-api` ＋ `others/testing` / `others/prompt-engineering` |
 | R 特集 | `language/r` ＋ `markup/r-markdown` / `markup/quarto` ＋ `usage/data-analysis` / `usage/machine-learning` |
+| Apple Notes 特集 | `apple/apple-notes-*` 22 スキル（基本操作 / 整理・検索 / 音声入力・Siri / 手書き / 自動化 / 添付・スキャン / 共有・同期・安全） |
 
 既存の分類が「点」なら、特設コレクションは目的に沿った「線」を示します。
 
@@ -125,7 +127,7 @@ git push -u origin main
 
 ## 構造図
 
-リポジトリ構造と 4 軸コレクションの関係を図にまとめています。下記の HTML を開くと、拡大・検索・テーマ切替・関係トレースができます。
+リポジトリ構造と 6 軸コレクションの関係を図にまとめています。下記の HTML を開くと、拡大・検索・テーマ切替・関係トレースができます。
 
 - [構造図（インタラクティブ HTML）](docs/repository-structure.html)
 - 図の定義: [`docs/repository-structure.architecture.json`](docs/repository-structure.architecture.json)
@@ -155,10 +157,12 @@ git push -u origin main
 │   ├── language/                # プログラミング言語別
 │   ├── markup/                  # マークアップ言語別
 │   ├── environment/             # 実行環境別
+│   ├── apple/                   # Apple エコシステム別（Apple Notes 主力）
 │   └── others/                  # その他
 ├── collections/                 # 特設コレクション（横断キュレーション）
 │   ├── python.md                # Python 特集
-│   └── r.md                     # R 特集
+│   ├── r.md                     # R 特集
+│   └── apple-notes.md           # Apple Notes 特集
 └── tools/
     ├── build-manifest.mjs       # manifest 生成スクリプト
     └── lint-skills.mjs          # SKILLS.md 検証（3 層 / scope 別）

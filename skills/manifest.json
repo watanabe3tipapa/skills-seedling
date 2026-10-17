@@ -876,6 +876,358 @@
       ]
     },
     {
+      "id": "apple",
+      "label": "Apple エコシステム別",
+      "skills": [
+        {
+          "name": "apple-notes-across-devices",
+          "description": "Mac / iPhone / iPad で Apple Notes をシームレスに使うスキル。端末別の導線と同期の勘所を支援する。",
+          "tags": [
+            "apple-notes",
+            "macos",
+            "ios",
+            "ipados",
+            "workflow"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/apple/apple-notes-across-devices/SKILLS.md"
+        },
+        {
+          "name": "apple-notes-applescript",
+          "description": "AppleScript / JXA で Apple Notes を操作するスキル。一括作成・抽出・整形のスクリプトを安全に組む。",
+          "tags": [
+            "apple-notes",
+            "applescript",
+            "jxa",
+            "automation"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/apple/apple-notes-applescript/SKILLS.md"
+        },
+        {
+          "name": "apple-notes-attachments",
+          "description": "Apple Notes の添付を活用するスキル。写真・書類・スキャン・リンクの貼り付けと整理を支援する。",
+          "tags": [
+            "apple-notes",
+            "attachments",
+            "media"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/apple/apple-notes-attachments/SKILLS.md"
+        },
+        {
+          "name": "apple-notes-automation",
+          "description": "Apple Notes の個人オートメーションを組むスキル。時刻・場所・アプリ起動をトリガにメモ運用を自動化する。",
+          "tags": [
+            "apple-notes",
+            "automation",
+            "focus",
+            "triggers"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/apple/apple-notes-automation/SKILLS.md"
+        },
+        {
+          "name": "apple-notes-basics",
+          "description": "Apple Notes の基本操作のスキル。メモ作成・編集・フォルダ・ピン留め・クイックメモをシームレスに使う導線を整える。",
+          "tags": [
+            "apple-notes",
+            "macos",
+            "ios",
+            "quick-note"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/apple/apple-notes-basics/SKILLS.md"
+        },
+        {
+          "name": "apple-notes-checklist",
+          "description": "Apple Notes のチェックリストで ToDo を回すスキル。タスク抽出・完了管理・スマートフォルダ連携を支援する。",
+          "tags": [
+            "apple-notes",
+            "checklist",
+            "todo",
+            "gtd"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/apple/apple-notes-checklist/SKILLS.md"
+        },
+        {
+          "name": "apple-notes-dictation",
+          "description": "Apple Notes の音声入力（ディクテーション）のスキル。句読点・改行・言語切替を操り、話して書けるようにする。",
+          "tags": [
+            "apple-notes",
+            "dictation",
+            "voice",
+            "natural-language"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/apple/apple-notes-dictation/SKILLS.md"
+        },
+        {
+          "name": "apple-notes-export-import",
+          "description": "Apple Notes のエクスポート／インポートのスキル。PDF・Markdown・.enex への書き出しと他ツールからの移行を支援する。",
+          "tags": [
+            "apple-notes",
+            "export",
+            "import",
+            "migration"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/apple/apple-notes-export-import/SKILLS.md"
+        },
+        {
+          "name": "apple-notes-icloud-sync",
+          "description": "Apple Notes の iCloud 同期を安定させるスキル。同期トラブルの切り分けと復旧手順を支援する。",
+          "tags": [
+            "apple-notes",
+            "icloud",
+            "sync",
+            "troubleshooting"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/apple/apple-notes-icloud-sync/SKILLS.md"
+        },
+        {
+          "name": "apple-notes-keyboard",
+          "description": "Apple Notes のキーボード操作のスキル。ショートカット・Markdown 風記法・クイックメモのキー操作で手を止めずに書く。",
+          "tags": [
+            "apple-notes",
+            "keyboard",
+            "shortcuts",
+            "productivity"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/apple/apple-notes-keyboard/SKILLS.md"
+        },
+        {
+          "name": "apple-notes-locked",
+          "description": "Apple Notes のロック付きメモを運用するスキル。ロック設定・生体認証・バックアップの注意を支援する。",
+          "tags": [
+            "apple-notes",
+            "security",
+            "locked",
+            "privacy"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/apple/apple-notes-locked/SKILLS.md"
+        },
+        {
+          "name": "apple-notes-markdown",
+          "description": "Apple Notes をプレーンテキスト／Markdown 風に書くスキル。記法の限界を踏まえ、可搬性を保つ書き方を支援する。",
+          "tags": [
+            "apple-notes",
+            "markdown",
+            "plaintext",
+            "portability"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/apple/apple-notes-markdown/SKILLS.md"
+        },
+        {
+          "name": "apple-notes-organize",
+          "description": "Apple Notes を整理するスキル。フォルダ・タグ・スマートフォルダを組み合わせ、増えても見つけやすい運用を支援する。",
+          "tags": [
+            "apple-notes",
+            "organize",
+            "tags",
+            "smart-folders"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/apple/apple-notes-organize/SKILLS.md"
+        },
+        {
+          "name": "apple-notes-scan-document",
+          "description": "Apple Notes で書類をスキャンするスキル。連続スキャン・OCR・署名・PDF 化の流れを支援する。",
+          "tags": [
+            "apple-notes",
+            "scan",
+            "ocr",
+            "pdf"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/apple/apple-notes-scan-document/SKILLS.md"
+        },
+        {
+          "name": "apple-notes-scribble",
+          "description": "Apple Pencil の手書きを Apple Notes で文字化するスキル。Scribble・手書き検索・文字変換のコツを支援する。",
+          "tags": [
+            "apple-notes",
+            "scribble",
+            "apple-pencil",
+            "handwriting"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/apple/apple-notes-scribble/SKILLS.md"
+        },
+        {
+          "name": "apple-notes-search",
+          "description": "Apple Notes の検索を使いこなすスキル。検索演算子・タグ検索・Spotlight 連携で目的のメモへ最短で到達する。",
+          "tags": [
+            "apple-notes",
+            "search",
+            "spotlight"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/apple/apple-notes-search/SKILLS.md"
+        },
+        {
+          "name": "apple-notes-sharing",
+          "description": "Apple Notes の共有・共同編集を使いこなすスキル。共有範囲・メンション・通知の設計を支援する。",
+          "tags": [
+            "apple-notes",
+            "sharing",
+            "collaboration"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/apple/apple-notes-sharing/SKILLS.md"
+        },
+        {
+          "name": "apple-notes-shortcuts",
+          "description": "ショートカット.app で Apple Notes を自動化するスキル。作成・追記・検索・書き出しのアクション活用を支援する。",
+          "tags": [
+            "apple-notes",
+            "shortcuts",
+            "automation"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/apple/apple-notes-shortcuts/SKILLS.md"
+        },
+        {
+          "name": "apple-notes-siri",
+          "description": "Siri で Apple Notes にメモするスキル。「Hey Siri、メモして」から音声で捕捉し、後で整える流れを支援する。",
+          "tags": [
+            "apple-notes",
+            "siri",
+            "voice",
+            "capture"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/apple/apple-notes-siri/SKILLS.md"
+        },
+        {
+          "name": "apple-notes-templates",
+          "description": "Apple Notes でテンプレートを運用するスキル。雛形メモの複製・ショートカット連携・定型文の再利用を支援する。",
+          "tags": [
+            "apple-notes",
+            "templates",
+            "workflow"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/apple/apple-notes-templates/SKILLS.md"
+        },
+        {
+          "name": "apple-notes-voice-memo",
+          "description": "ボイスメモと Apple Notes を連携するスキル。録音の書き起こし／取り込みと、メモとしての整形の流れを支援する。",
+          "tags": [
+            "apple-notes",
+            "voice-memos",
+            "transcription"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/apple/apple-notes-voice-memo/SKILLS.md"
+        },
+        {
+          "name": "apple-notes-web-clip",
+          "description": "共有シートとクイックメモで Web を Apple Notes に取り込むスキル。引用・出典・タグ付けを支援する。",
+          "tags": [
+            "apple-notes",
+            "web-clip",
+            "share-sheet"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/apple/apple-notes-web-clip/SKILLS.md"
+        }
+      ]
+    },
+    {
       "id": "others",
       "label": "その他",
       "skills": [
@@ -1075,6 +1427,146 @@
     }
   ],
   "collections": [
+    {
+      "id": "apple-notes",
+      "label": "Apple Notes 特集",
+      "description": "Apple Notes を主力に、自然言語・音声（Siri / ディクテーション）・手書きから自動化・同期・安全までを横断的に体系化した特設コレクション。",
+      "path": "collections/apple-notes.md",
+      "skills": [
+        {
+          "path": "apple/apple-notes-basics",
+          "name": "apple-notes-basics",
+          "category": "apple",
+          "description": "Apple Notes の基本操作のスキル。メモ作成・編集・フォルダ・ピン留め・クイックメモをシームレスに使う導線を整える。"
+        },
+        {
+          "path": "apple/apple-notes-organize",
+          "name": "apple-notes-organize",
+          "category": "apple",
+          "description": "Apple Notes を整理するスキル。フォルダ・タグ・スマートフォルダを組み合わせ、増えても見つけやすい運用を支援する。"
+        },
+        {
+          "path": "apple/apple-notes-search",
+          "name": "apple-notes-search",
+          "category": "apple",
+          "description": "Apple Notes の検索を使いこなすスキル。検索演算子・タグ検索・Spotlight 連携で目的のメモへ最短で到達する。"
+        },
+        {
+          "path": "apple/apple-notes-keyboard",
+          "name": "apple-notes-keyboard",
+          "category": "apple",
+          "description": "Apple Notes のキーボード操作のスキル。ショートカット・Markdown 風記法・クイックメモのキー操作で手を止めずに書く。"
+        },
+        {
+          "path": "apple/apple-notes-dictation",
+          "name": "apple-notes-dictation",
+          "category": "apple",
+          "description": "Apple Notes の音声入力（ディクテーション）のスキル。句読点・改行・言語切替を操り、話して書けるようにする。"
+        },
+        {
+          "path": "apple/apple-notes-siri",
+          "name": "apple-notes-siri",
+          "category": "apple",
+          "description": "Siri で Apple Notes にメモするスキル。「Hey Siri、メモして」から音声で捕捉し、後で整える流れを支援する。"
+        },
+        {
+          "path": "apple/apple-notes-voice-memo",
+          "name": "apple-notes-voice-memo",
+          "category": "apple",
+          "description": "ボイスメモと Apple Notes を連携するスキル。録音の書き起こし／取り込みと、メモとしての整形の流れを支援する。"
+        },
+        {
+          "path": "apple/apple-notes-scribble",
+          "name": "apple-notes-scribble",
+          "category": "apple",
+          "description": "Apple Pencil の手書きを Apple Notes で文字化するスキル。Scribble・手書き検索・文字変換のコツを支援する。"
+        },
+        {
+          "path": "apple/apple-notes-shortcuts",
+          "name": "apple-notes-shortcuts",
+          "category": "apple",
+          "description": "ショートカット.app で Apple Notes を自動化するスキル。作成・追記・検索・書き出しのアクション活用を支援する。"
+        },
+        {
+          "path": "apple/apple-notes-applescript",
+          "name": "apple-notes-applescript",
+          "category": "apple",
+          "description": "AppleScript / JXA で Apple Notes を操作するスキル。一括作成・抽出・整形のスクリプトを安全に組む。"
+        },
+        {
+          "path": "apple/apple-notes-templates",
+          "name": "apple-notes-templates",
+          "category": "apple",
+          "description": "Apple Notes でテンプレートを運用するスキル。雛形メモの複製・ショートカット連携・定型文の再利用を支援する。"
+        },
+        {
+          "path": "apple/apple-notes-automation",
+          "name": "apple-notes-automation",
+          "category": "apple",
+          "description": "Apple Notes の個人オートメーションを組むスキル。時刻・場所・アプリ起動をトリガにメモ運用を自動化する。"
+        },
+        {
+          "path": "apple/apple-notes-attachments",
+          "name": "apple-notes-attachments",
+          "category": "apple",
+          "description": "Apple Notes の添付を活用するスキル。写真・書類・スキャン・リンクの貼り付けと整理を支援する。"
+        },
+        {
+          "path": "apple/apple-notes-scan-document",
+          "name": "apple-notes-scan-document",
+          "category": "apple",
+          "description": "Apple Notes で書類をスキャンするスキル。連続スキャン・OCR・署名・PDF 化の流れを支援する。"
+        },
+        {
+          "path": "apple/apple-notes-web-clip",
+          "name": "apple-notes-web-clip",
+          "category": "apple",
+          "description": "共有シートとクイックメモで Web を Apple Notes に取り込むスキル。引用・出典・タグ付けを支援する。"
+        },
+        {
+          "path": "apple/apple-notes-checklist",
+          "name": "apple-notes-checklist",
+          "category": "apple",
+          "description": "Apple Notes のチェックリストで ToDo を回すスキル。タスク抽出・完了管理・スマートフォルダ連携を支援する。"
+        },
+        {
+          "path": "apple/apple-notes-markdown",
+          "name": "apple-notes-markdown",
+          "category": "apple",
+          "description": "Apple Notes をプレーンテキスト／Markdown 風に書くスキル。記法の限界を踏まえ、可搬性を保つ書き方を支援する。"
+        },
+        {
+          "path": "apple/apple-notes-sharing",
+          "name": "apple-notes-sharing",
+          "category": "apple",
+          "description": "Apple Notes の共有・共同編集を使いこなすスキル。共有範囲・メンション・通知の設計を支援する。"
+        },
+        {
+          "path": "apple/apple-notes-icloud-sync",
+          "name": "apple-notes-icloud-sync",
+          "category": "apple",
+          "description": "Apple Notes の iCloud 同期を安定させるスキル。同期トラブルの切り分けと復旧手順を支援する。"
+        },
+        {
+          "path": "apple/apple-notes-locked",
+          "name": "apple-notes-locked",
+          "category": "apple",
+          "description": "Apple Notes のロック付きメモを運用するスキル。ロック設定・生体認証・バックアップの注意を支援する。"
+        },
+        {
+          "path": "apple/apple-notes-export-import",
+          "name": "apple-notes-export-import",
+          "category": "apple",
+          "description": "Apple Notes のエクスポート／インポートのスキル。PDF・Markdown・.enex への書き出しと他ツールからの移行を支援する。"
+        },
+        {
+          "path": "apple/apple-notes-across-devices",
+          "name": "apple-notes-across-devices",
+          "category": "apple",
+          "description": "Mac / iPhone / iPad で Apple Notes をシームレスに使うスキル。端末別の導線と同期の勘所を支援する。"
+        }
+      ]
+    },
     {
       "id": "python",
       "label": "Python 特集",

@@ -2,48 +2,51 @@
   "schema_version": 1,
   "diagram_type": "architecture",
   "meta": {
-    "title": "skills-seedling — リポジトリ構造と 5 軸コレクション",
+    "title": "skills-seedling — リポジトリ構造と 6 軸コレクション",
     "quality_profile": "showcase",
     "views": [
       { "id": "pipeline", "label": "育苗パイプライン", "focus": ["contributor", "usage", "tools", "manifest", "web", "ai"], "note": "書き、検証し、索引化して配信し、AI ツールへ移植する流れ" },
       { "id": "usage", "label": "usage/ 開発用途別", "focus": ["usage", "contributor", "tools", "manifest"], "note": "目的別スキルの位置" },
       { "id": "language", "label": "language/ プログラミング言語別", "focus": ["language", "contributor", "tools", "manifest"], "note": "プログラミング言語別スキルの位置" },
       { "id": "markup", "label": "markup/ マークアップ言語別", "focus": ["markup", "contributor", "tools", "manifest"], "note": "Markdown / Quarto など文書・図の記法の位置" },
-      { "id": "others", "label": "others/ その他", "focus": ["others", "contributor", "tools", "manifest"], "note": "横断的なスキルの位置" }
+      { "id": "apple", "label": "apple/ Apple エコシステム別", "focus": ["apple", "contributor", "tools", "manifest"], "note": "Apple Notes を主力とするスキルの位置" }
     ]
   },
   "components": [
-    { "id": "contributor", "type": "external", "label": "コントリビューター", "sublabel": "SKILLS.md を追加・PR", "pos": [36, 172], "size": [118, 74] },
-    { "id": "usage", "type": "database", "label": "usage/", "sublabel": "開発用途別 · 12 件", "pos": [196, 40], "size": [140, 58] },
-    { "id": "language", "type": "database", "label": "language/", "sublabel": "言語別 · 20 件", "pos": [196, 106], "size": [140, 58] },
-    { "id": "markup", "type": "database", "label": "markup/", "sublabel": "マークアップ · 14 件", "pos": [196, 172], "size": [140, 58] },
-    { "id": "environment", "type": "database", "label": "environment/", "sublabel": "環境別 · 7 件", "pos": [196, 238], "size": [140, 58] },
-    { "id": "others", "type": "database", "label": "others/", "sublabel": "その他 · 12 件", "pos": [196, 304], "size": [140, 58] },
-    { "id": "tools", "type": "backend", "label": "tools/", "sublabel": "3 層検証と索引生成", "pos": [386, 174], "size": [176, 70] },
-    { "id": "manifest", "type": "database", "label": "manifest.json", "sublabel": "一覧・検索の索引", "pos": [612, 172], "size": [158, 74] },
-    { "id": "web", "type": "frontend", "label": "公開サイト", "sublabel": "index.html / editor.html", "pos": [820, 162], "size": [176, 94] },
-    { "id": "ai", "type": "external", "label": "AI コーディングツール", "sublabel": "SKILLS.md を読み込む", "pos": [1048, 172], "size": [150, 74] }
+    { "id": "contributor", "type": "external", "label": "コントリビューター", "sublabel": "SKILLS.md を追加・PR", "pos": [36, 163], "size": [118, 74] },
+    { "id": "usage", "type": "database", "label": "usage/", "sublabel": "開発用途別 · 12 件", "pos": [196, 40], "size": [140, 44] },
+    { "id": "language", "type": "database", "label": "language/", "sublabel": "言語別 · 20 件", "pos": [196, 95], "size": [140, 44] },
+    { "id": "markup", "type": "database", "label": "markup/", "sublabel": "マークアップ · 14 件", "pos": [196, 150], "size": [140, 44] },
+    { "id": "environment", "type": "database", "label": "environment/", "sublabel": "環境別 · 7 件", "pos": [196, 205], "size": [140, 44] },
+    { "id": "apple", "type": "database", "label": "apple/", "sublabel": "Apple Notes 主力 · 22 件", "pos": [196, 260], "size": [140, 44] },
+    { "id": "others", "type": "database", "label": "others/", "sublabel": "その他 · 12 件", "pos": [196, 315], "size": [140, 44] },
+    { "id": "tools", "type": "backend", "label": "tools/", "sublabel": "3 層検証と索引生成", "pos": [386, 165], "size": [176, 70] },
+    { "id": "manifest", "type": "database", "label": "manifest.json", "sublabel": "一覧・検索の索引", "pos": [612, 163], "size": [158, 74] },
+    { "id": "web", "type": "frontend", "label": "公開サイト", "sublabel": "index.html / editor.html", "pos": [820, 153], "size": [176, 94] },
+    { "id": "ai", "type": "external", "label": "AI コーディングツール", "sublabel": "SKILLS.md を読み込む", "pos": [1048, 163], "size": [150, 74] }
   ],
   "boundaries": [
-    { "kind": "region", "label": "skills/ — 育苗箱のコレクション（65 スキル）", "wraps": ["usage", "language", "markup", "environment", "others"], "pad": 26 }
+    { "kind": "region", "label": "skills/ — 育苗箱のコレクション（87 スキル）", "wraps": ["usage", "language", "markup", "environment", "apple", "others"], "pad": 26 }
   ],
   "connections": [
-    { "id": "author-usage", "from": "contributor", "to": "usage", "label": "PR", "variant": "emphasis", "fromSide": "right", "toSide": "left" },
+    { "id": "author-usage", "from": "contributor", "to": "usage", "variant": "emphasis", "fromSide": "right", "toSide": "left" },
     { "id": "author-language", "from": "contributor", "to": "language", "fromSide": "right", "toSide": "left" },
     { "id": "author-markup", "from": "contributor", "to": "markup", "fromSide": "right", "toSide": "left" },
     { "id": "author-environment", "from": "contributor", "to": "environment", "fromSide": "right", "toSide": "left" },
+    { "id": "author-apple", "from": "contributor", "to": "apple", "fromSide": "right", "toSide": "left" },
     { "id": "author-others", "from": "contributor", "to": "others", "fromSide": "right", "toSide": "left" },
-    { "id": "usage-tools", "from": "usage", "to": "tools", "label": "検証", "fromSide": "right", "toSide": "left" },
+    { "id": "usage-tools", "from": "usage", "to": "tools", "label": "検証", "labelDy": -20, "fromSide": "right", "toSide": "left" },
     { "id": "language-tools", "from": "language", "to": "tools" },
     { "id": "markup-tools", "from": "markup", "to": "tools" },
     { "id": "environment-tools", "from": "environment", "to": "tools" },
+    { "id": "apple-tools", "from": "apple", "to": "tools" },
     { "id": "others-tools", "from": "others", "to": "tools" },
     { "id": "tools-manifest", "from": "tools", "to": "manifest", "label": "生成" },
     { "id": "manifest-web", "from": "manifest", "to": "web", "label": "fetch" },
     { "id": "web-ai", "from": "web", "to": "ai", "label": "配信" }
   ],
   "cards": [
-    { "dot": "cyan", "title": "skills/ — 5 軸コレクション", "items": ["usage/ 開発用途別 12 件（backend-api, machine-learning など）", "language/ 言語別 20 件（python, typescript, rust, go など）", "markup/ マークアップ 14 件（markdown, quarto, html, latex など）", "environment/ 実行環境別 7 件（serverless, cloud-native など）", "others/ その他 12 件（security, prompt-engineering など）"] },
+    { "dot": "cyan", "title": "skills/ — 6 軸コレクション", "items": ["usage/ 開発用途別 12 件（backend-api, machine-learning など）", "language/ 言語別 20 件（python, typescript, rust, go など）", "markup/ マークアップ 14 件（markdown, quarto, html, latex など）", "environment/ 実行環境別 7 件（serverless, cloud-native など）", "apple/ Apple エコシステム別 22 件（Apple Notes 主力）", "others/ その他 12 件（security, prompt-engineering など）"] },
     { "dot": "emerald", "title": "ツールと索引", "items": ["lint-skills.mjs が 3 層構造と scope を検証", "build-manifest.mjs が manifest.json を自動生成", "manifest.json が一覧・検索・ランチャーの索引"] },
     { "dot": "rose", "title": "その他の構成", "items": ["_TEMPLATE/SKILLS.md がスキルの雛形", "index.html はランディング、editor.html は PWA ランチャー", "docs/ と GLOSSARY.md が設計方針を補足", "GitHub Actions が Pages へ自動デプロイ"] }
   ]

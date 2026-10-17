@@ -1,7 +1,7 @@
 ---
 name: skill-name
 description: このスキルが何を支援し、どのような依頼で発動すべきかを1〜2文で。エージェントが読み込むかどうかを判断する手がかりになるため、対象技術と目的を具体的に書く。
-category: usage | language | environment | others
+category: usage | language | markup | environment | apple | others
 tags: []
 version: 0.1.0
 updated: 2026-10-14
