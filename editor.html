@@ -324,7 +324,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
   <div class="hero">
     <h1 class="hero-title">SKILLS.md Editor</h1>
     <p class="hero-subtitle">
-      SKILLS.md を選ぶと <strong>Right-Stuff Editor</strong> を新しいタブで開き、本文 Markdown をクリップボードへコピーします。プレビューで内容を確認してから貼り付けられます。
+      SKILLS.md を選ぶと本文 Markdown をクリップボードへコピーし、<strong>Right-Stuff Editor</strong> を新しいタブで開きます。エディタで <code>Ctrl/Cmd + V</code> を押して貼り付けてください。プレビューで内容を確認してから貼り付けられます。
     </p>
     <div class="hero-cta">
       <a class="btn btn-ghost" href="./">← コレクション</a>
@@ -338,7 +338,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 
   <main id="skills">
     <div class="note">
-      <strong>使い方</strong>: スキルを選んで「エディタで開く」を押すと、エディタのタブとクリップボードの両方に本文が入ります。<code>Ctrl/Cmd + V</code> で貼り付けてください。「プレビュー」で内容を確認できます。配布用の URL は <code id="editor-url"></code>。
+      <strong>使い方</strong>: スキルを選んで「コピーして開く」を押すと、本文をクリップボードへコピーしてからエディタのタブを開きます。<code>Ctrl/Cmd + V</code> で貼り付けてください。「プレビュー」で内容を確認できます。配布用の URL は <code id="editor-url"></code>。
     </div>
 
     <div class="toolbar" role="search">
@@ -375,7 +375,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
     </div>
     <div class="modal-body" id="modal-body"></div>
     <div class="modal-foot">
-      <button class="btn btn-primary" id="modal-open" type="button">エディタで開く</button>
+      <button class="btn btn-primary" id="modal-open" type="button">コピーして開く</button>
       <button class="btn btn-ghost" id="modal-copy" type="button">Markdown をコピー</button>
     </div>
   </div>
@@ -503,18 +503,16 @@ function markdownToHtml(body) {
   return pre.outerHTML;
 }
 
-function openInEditor(skill) {
-  const text = cache.get(skill.path);
-  const win = window.open(EDITOR_URL, "_blank", "noopener,noreferrer");
+async function openInEditor(skill) {
+  let text = cache.get(skill.path);
   if (text == null) {
-    toast("本文の読み込みに失敗しました。コピーをお試しください。");
-    return;
+    try { text = await fetchText(skill.path); } catch (_) { text = null; }
   }
-  copyText(text).then((ok) => {
-    toast(ok ? "本文をコピーしました。エディタに貼り付けてください。"
-             : "エディタを開きました。コピーは失敗したので手動でお願いします。");
-  });
-  if (!win) toast("ポップアップがブロックされました。");
+  const ok = text != null ? await copyText(text) : false;
+  const win = window.open(EDITOR_URL, "_blank", "noopener,noreferrer");
+  if (!win) { toast("ポップアップがブロックされました。"); return; }
+  if (ok) toast("コピーしました。エディタで Ctrl/Cmd + V を押してください。");
+  else toast("エディタを開きました。コピーに失敗したので手動でコピーしてください。");
 }
 
 function openModal(skill) {
@@ -632,7 +630,7 @@ function skillCard(skill) {
   const openBtn = document.createElement("button");
   openBtn.className = "btn btn-primary";
   openBtn.type = "button";
-  openBtn.innerHTML = 'エディタで開く';
+  openBtn.innerHTML = 'コピーして開く';
   openBtn.addEventListener("click", () => openInEditor(skill));
 
   const prevBtn = document.createElement("button");
