@@ -37,6 +37,10 @@ const INTENTS = [
     aliases: ["基本方針", "方針", "原則", "スタンス", "考え方", "policy", "principles"] },
   { id: "steps", required: ["shared", "canonical"],
     aliases: ["進め方", "手順", "やり方", "進めかた", "ステップ", "steps", "procedure", "workflow"] },
+  { id: "walkthrough", required: [],
+    aliases: ["画面の手順", "画面操作", "操作手順", "スクリーンショット手順", "画面で", "walkthrough", "screen steps", "ui steps"] },
+  { id: "examples", required: [],
+    aliases: ["スクリプト実例", "コード例", "検索例", "実例", "examples", "script examples", "sample code"] },
   { id: "checklist", required: ["shared", "canonical"],
     aliases: ["チェックリスト", "確認項目", "確認事項", "チェック", "checklist"] },
   { id: "gloss", required: [],
@@ -44,7 +48,7 @@ const INTENTS = [
   { id: "refs", required: ["canonical"],
     aliases: ["参考", "参照", "関連", "リンク", "references", "see also"] },
 ];
-const ORDER = INTENTS.map((i) => i.id);
+const ORDER = ["when", "policy", "steps", "checklist", "walkthrough", "examples", "gloss", "refs"];
 const ORDER_INDEX = Object.fromEntries(ORDER.map((id, i) => [id, i]));
 
 const INTENT_BY_ID = Object.fromEntries(INTENTS.map((i) => [i.id, i]));

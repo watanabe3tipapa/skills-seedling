@@ -18,7 +18,8 @@ reviewed: 2026-10-14
 - C層 橋渡し: description と「ことばの対応」で意味に到達できるようにする。
 - 方言の見出しを使うときは意図アンカーを付けると機械可読になる:
     ## どないな時に使うん {#when}
-  意図アンカー: {#when} {#policy} {#steps} {#checklist} {#gloss} {#refs}
+  意図アンカー: {#when} {#policy} {#steps} {#walkthrough} {#examples} {#checklist} {#gloss} {#refs}
+  （{#walkthrough} 画面の手順 / {#examples} スクリプト実例 は任意。UI 操作やコード例があると厚みが出る）
 - lang: ja / en / ja-kansai ...（使うことば・方言）
 - scope: team | project | shared | canonical（共有範囲＝厳格度）
 - variety: 任意。方言・社内語の名前（例: 関西弁, 弊社スラング）

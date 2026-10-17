@@ -39,6 +39,15 @@ scope: shared
 - [ ] 手書きが検索でヒットするか
 - [ ] Apple Pencil の筆圧 / ツールを把握しているか
 
+## 画面の手順 {#walkthrough}
+
+1. メモ.app で Apple Pencil を使い、本文に直接書く。
+2. 手書きのまま検索したい語は、Scribble で文字に変換しておく。
+3. 図やスケッチは手書き、本文は文字、と領域を分ける。
+4. 検索フィールドに手書き語を入れてヒットを確認する。
+
+> Scribble の対象言語は、設定 > Apple Pencil で確認します。
+
 ## 参考
 
 - Apple サポート（Scribble）

@@ -58,7 +58,7 @@ Validation is by *intent*, not by surface text. When you use a dialectal heading
 ## どないな時に使うん {#when}     ← dialect; the anchor states the intent
 ```
 
-Available intents: `{#when}` `{#policy}` `{#steps}` `{#checklist}` `{#gloss}` `{#refs}`.
+Available intents: `{#when}` `{#policy}` `{#steps}` `{#walkthrough}` `{#examples}` `{#checklist}` `{#gloss}` `{#refs}`. `{#walkthrough}` (screen steps) and `{#examples}` (script examples) are optional and add depth to skills that involve UI operations or code.
 
 Standard and common colloquial headings (e.g. いつ使うか / 進めかた / 確認項目) match automatically via aliases. Fully dialectal headings bridge over with an anchor.
 
