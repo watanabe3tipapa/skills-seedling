@@ -535,6 +535,227 @@
       ]
     },
     {
+      "id": "markup",
+      "label": "マークアップ言語別",
+      "skills": [
+        {
+          "name": "asciidoc",
+          "description": "AsciiDoc を書く・整えるスキル。文書属性、インクルード、表、相互参照を踏まえて支援する。",
+          "tags": [
+            "asciidoc",
+            "asciidoctor",
+            "documentation"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/markup/asciidoc/SKILLS.md"
+        },
+        {
+          "name": "djot",
+          "description": "Djot を書く・整えるスキル。CommonMark との違い、属性、脚注、厳密な記法を踏まえて支援する。",
+          "tags": [
+            "djot",
+            "markup",
+            "pandoc"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/markup/djot/SKILLS.md"
+        },
+        {
+          "name": "graphviz",
+          "description": "Graphviz（DOT）を書く・整えるスキル。グラフ種別、レイアウト、属性、クラスタを踏まえて支援する。",
+          "tags": [
+            "graphviz",
+            "dot",
+            "diagrams"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/markup/graphviz/SKILLS.md"
+        },
+        {
+          "name": "html",
+          "description": "HTML を書く・整えるスキル。文書構造、セマンティクス、アクセシビリティ、バリデーションを踏まえて支援する。",
+          "tags": [
+            "html",
+            "semantic",
+            "accessibility",
+            "markup"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/markup/html/SKILLS.md"
+        },
+        {
+          "name": "latex",
+          "description": "LaTeX を書く・整えるスキル。プリアンブル、数式、相互参照、ビルドを踏まえて文書作成を支援する。",
+          "tags": [
+            "latex",
+            "tex",
+            "typesetting"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/markup/latex/SKILLS.md"
+        },
+        {
+          "name": "markdown",
+          "description": "Markdown（.md）を書く・整えるスキル。見出し構造、リンク、表、コードブロック、方言の互換性を踏まえて支援する。",
+          "tags": [
+            "markdown",
+            "gfm",
+            "commonmark",
+            "documentation"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/markup/markdown/SKILLS.md"
+        },
+        {
+          "name": "mermaid",
+          "description": "Mermaid を書く・整えるスキル。ダイアグラム種別、記法、レンダリング、保守性を踏まえて支援する。",
+          "tags": [
+            "mermaid",
+            "diagrams",
+            "markdown"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/markup/mermaid/SKILLS.md"
+        },
+        {
+          "name": "org-mode",
+          "description": "Org mode（.org）を書く・整えるスキル。見出し、TODO、属性、エクスポート、Babel を踏まえて支援する。",
+          "tags": [
+            "org-mode",
+            "emacs",
+            "literate"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/markup/org-mode/SKILLS.md"
+        },
+        {
+          "name": "plantuml",
+          "description": "PlantUML を書く・整えるスキル。図種別、インクルード、テーマ、保守性を踏まえて支援する。",
+          "tags": [
+            "plantuml",
+            "uml",
+            "diagrams"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/markup/plantuml/SKILLS.md"
+        },
+        {
+          "name": "quarto",
+          "description": "Quarto（.qmd）を書く・整えるスキル。YAML ヘッダ、コードチャンク、出力形式、再現性を踏まえて文書作成を支援する。",
+          "tags": [
+            "quarto",
+            "qmd",
+            "pandoc",
+            "reproducible"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/markup/quarto/SKILLS.md"
+        },
+        {
+          "name": "r-markdown",
+          "description": "R Markdown（.Rmd）を書く・整えるスキル。knitr チャンク、YAML ヘッダ、出力形式、再現性を踏まえて支援する。",
+          "tags": [
+            "rmarkdown",
+            "knitr",
+            "r",
+            "reproducible"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/markup/r-markdown/SKILLS.md"
+        },
+        {
+          "name": "restructuredtext",
+          "description": "reStructuredText を書く・整えるスキル。ディレクティブ、ロール、相互参照、Sphinx 連携を踏まえて支援する。",
+          "tags": [
+            "restructuredtext",
+            "sphinx",
+            "documentation"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/markup/restructuredtext/SKILLS.md"
+        },
+        {
+          "name": "svg",
+          "description": "SVG を書く・整えるスキル。座標系、viewBox、パス、アクセシビリティ、最適化を踏まえて支援する。",
+          "tags": [
+            "svg",
+            "vector",
+            "graphics",
+            "accessibility"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/markup/svg/SKILLS.md"
+        },
+        {
+          "name": "xml",
+          "description": "XML を書く・整えるスキル。整形式、名前空間、スキーマ、エスケープとセキュリティを踏まえて支援する。",
+          "tags": [
+            "xml",
+            "xsd",
+            "namespace"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/markup/xml/SKILLS.md"
+        }
+      ]
+    },
+    {
       "id": "environment",
       "label": "実行環境別",
       "skills": [
@@ -849,6 +1070,96 @@
           "scope": "shared",
           "variety": "",
           "path": "skills/others/testing/SKILLS.md"
+        }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "id": "python",
+      "label": "Python 特集",
+      "description": "Python を軸に、データ分析・機械学習・スクレイピング・バックエンド・テストまでを横断的に体系化した特設コレクション。",
+      "path": "collections/python.md",
+      "skills": [
+        {
+          "path": "language/python",
+          "name": "python",
+          "category": "language",
+          "description": "Python のコードを書く・直す際のスキル。型ヒント、venv、pytest、パッケージ管理、慣用的な書き方に沿って実装を支援する。"
+        },
+        {
+          "path": "usage/data-analysis",
+          "name": "data-analysis",
+          "category": "usage",
+          "description": "Python / SQL / ノートブックを用いたデータ分析・可視化を支援するスキル。探索的データ分析、集計、指標設計、レポート作成の依頼で発動する。"
+        },
+        {
+          "path": "usage/machine-learning",
+          "name": "machine-learning",
+          "category": "usage",
+          "description": "機械学習モデルの学習・評価・推論の実装を支援するスキル。データ分割、特徴量、評価指標、再現性、実験管理の依頼で発動する。"
+        },
+        {
+          "path": "usage/web-scraping",
+          "name": "web-scraping",
+          "category": "usage",
+          "description": "Web スクレイピング・クローラの実装を支援するスキル。取得の作法、robots/利用規約の尊重、レート制限、パース安定性の依頼で発動する。"
+        },
+        {
+          "path": "usage/backend-api",
+          "name": "backend-api",
+          "category": "usage",
+          "description": "REST / GraphQL / RPC によるサーバサイドAPIの設計と実装を支援するスキル。エンドポイント設計、バリデーション、認証認可、エラーハンドリングの依頼で発動する。"
+        },
+        {
+          "path": "others/testing",
+          "name": "testing",
+          "category": "others",
+          "description": "テストを書く・改善する際のスキル。テスト戦略、境界値、モック、カバレッジを踏まえて信頼できるテストを設計する。"
+        },
+        {
+          "path": "others/prompt-engineering",
+          "name": "prompt-engineering",
+          "category": "others",
+          "description": "LLM への依頼文（プロンプト）の設計・改善を行うスキル。役割設定、制約、出力形式の指定、反復改善を支援する。"
+        }
+      ]
+    },
+    {
+      "id": "r",
+      "label": "R 特集",
+      "description": "R を軸に、R Markdown・Quarto・データ分析・機械学習までを横断的に体系化した特設コレクション。",
+      "path": "collections/r.md",
+      "skills": [
+        {
+          "path": "language/r",
+          "name": "r",
+          "category": "language",
+          "description": "R のコードを書く・直す際のスキル。tidyverse、ベクトル化、欠損値、再現性に沿って分析コードを支援する。"
+        },
+        {
+          "path": "markup/r-markdown",
+          "name": "r-markdown",
+          "category": "markup",
+          "description": "R Markdown（.Rmd）を書く・整えるスキル。knitr チャンク、YAML ヘッダ、出力形式、再現性を踏まえて支援する。"
+        },
+        {
+          "path": "markup/quarto",
+          "name": "quarto",
+          "category": "markup",
+          "description": "Quarto（.qmd）を書く・整えるスキル。YAML ヘッダ、コードチャンク、出力形式、再現性を踏まえて文書作成を支援する。"
+        },
+        {
+          "path": "usage/data-analysis",
+          "name": "data-analysis",
+          "category": "usage",
+          "description": "Python / SQL / ノートブックを用いたデータ分析・可視化を支援するスキル。探索的データ分析、集計、指標設計、レポート作成の依頼で発動する。"
+        },
+        {
+          "path": "usage/machine-learning",
+          "name": "machine-learning",
+          "category": "usage",
+          "description": "機械学習モデルの学習・評価・推論の実装を支援するスキル。データ分割、特徴量、評価指標、再現性、実験管理の依頼で発動する。"
         }
       ]
     }

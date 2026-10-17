@@ -14,7 +14,7 @@ skills-seedling は、AI コーディング支援ツールで活用できる **S
 
 ## 概要
 
-skills-seedling は、目的や技術スタックに応じて必要なスキル定義をすぐに見つけられるよう、SKILLS.md を **4 つの軸**（開発用途 / プログラミング言語 / 実行環境 / その他）で整理したコレクションです。スキル定義を単なるコピー元ではなく「育てる」対象に置き、レビューと更新を通して鮮度と再利用性を保つことを目的としています。
+skills-seedling は、目的や技術スタックに応じて必要なスキル定義をすぐに見つけられるよう、SKILLS.md を **5 つの軸**（開発用途 / プログラミング言語 / マークアップ言語 / 実行環境 / その他）で整理したコレクションです。スキル定義を単なるコピー元ではなく「育てる」対象に置き、レビューと更新を通して鮮度と再利用性を保つことを目的としています。
 
 本リポジトリの根底にあるのは、**自然言語としての「日本語」の特性を、計算機（ツール・型・検索・LLM）とどう噛み合わせるか**という問いです。意味の層だけを機械可読にし、表記は手放さない 3 層設計は、そのマッチングを良くしていくための試みであり、完成形ではありません。良策は探求の途上にあり、このリポジトリはその知見を持ち寄って育てていく場です。
 
@@ -33,7 +33,7 @@ skills-seedling は、目的や技術スタックに応じて必要なスキル�
 
 ## 主な特徴
 
-- 4 つの軸で整理された分類体系
+- 5 つの軸で整理された分類体系
 - スキルは `skills/<軸>/<スキル名>/SKILLS.md` に 1 概念 1 ファイルで収録
 - `skills/manifest.json` を自動生成し、一覧・検索・ランチャーに利用
 - AI コーディング支援ツール（エージェント）にそのまま渡せる SKILLS.md
@@ -49,10 +49,22 @@ skills-seedling は、目的や技術スタックに応じて必要なスキル�
 |---|---|---|
 | 開発用途別 | `skills/usage/` | Web 開発、バックエンド、データ分析、インフラ / DevOps など |
 | プログラミング言語別 | `skills/language/` | Python、TypeScript、Go、Rust、C / C++、JavaScript、R、COBOL など |
+| マークアップ言語別 | `skills/markup/` | Markdown（.md）、Quarto（.qmd）、AsciiDoc、reStructuredText、HTML、LaTeX、Mermaid など |
 | 実行環境別 | `skills/environment/` | ローカル開発、クラウド、SaaS 連携 |
 | その他 | `skills/others/` | レビュー、テスト、セキュリティ、ドキュメントなど |
 
 索引は `skills/manifest.json` に自動生成されます（`node tools/build-manifest.mjs`）。
+
+## 特設コレクション
+
+複数の軸にまたがる関連スキルを、目的別に体系化して束ねた特集です。`collections/<id>.md` に 1 コレクション 1 ファイルで置き、frontmatter の `skills`（スキルのパス一覧）で構成を宣言します。manifest の `collections` に自動で取り込まれます。
+
+| コレクション | 構成スキル |
+|---|---|
+| Python 特集 | `language/python` ＋ `usage/data-analysis` / `usage/machine-learning` / `usage/web-scraping` / `usage/backend-api` ＋ `others/testing` / `others/prompt-engineering` |
+| R 特集 | `language/r` ＋ `markup/r-markdown` / `markup/quarto` ＋ `usage/data-analysis` / `usage/machine-learning` |
+
+既存の分類が「点」なら、特設コレクションは目的に沿った「線」を示します。
 
 ## 方言を許容する設計（土語を育てる）
 
@@ -140,9 +152,13 @@ git push -u origin main
 │   ├── manifest.json            # 自動生成される索引
 │   ├── _TEMPLATE/SKILLS.md      # スキル雛形
 │   ├── usage/                   # 開発用途別
-│   ├── language/                # 言語別
+│   ├── language/                # プログラミング言語別
+│   ├── markup/                  # マークアップ言語別
 │   ├── environment/             # 実行環境別
 │   └── others/                  # その他
+├── collections/                 # 特設コレクション（横断キュレーション）
+│   ├── python.md                # Python 特集
+│   └── r.md                     # R 特集
 └── tools/
     ├── build-manifest.mjs       # manifest 生成スクリプト
     └── lint-skills.mjs          # SKILLS.md 検証（3 層 / scope 別）

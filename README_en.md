@@ -14,7 +14,7 @@ skills-seedling is a curated repository that organizes **SKILLS.md** files for A
 
 ## Overview
 
-skills-seedling is a collection that organizes SKILLS.md files along **four axes** (development use case / programming language / runtime environment / other) so you can quickly find the skill definition you need for your goal or tech stack. Rather than treating skill definitions as a one-off copy source, it places them in a *growing* process — reviews and updates keep them fresh and reusable.
+skills-seedling is a collection that organizes SKILLS.md files along **five axes** (development use case / programming language / markup language / runtime environment / other) so you can quickly find the skill definition you need for your goal or tech stack. Rather than treating skill definitions as a one-off copy source, it places them in a *growing* process — reviews and updates keep them fresh and reusable.
 
 At its root, this repository asks **how to mesh the properties of Japanese as a natural language with computing** (tools, types, search, LLMs). The three-layer design — machine-readable only in the layer of meaning, surface form preserved — is an attempt to improve that match, not a finished form. Good approaches are still being explored, and this repository is a place to bring the findings together.
 
@@ -33,7 +33,7 @@ A seedling box is a small container that **guards and raises seeds until they ar
 
 ## Features
 
-- A taxonomy organized along four axes
+- A taxonomy organized along five axes
 - One concept per file at `skills/<axis>/<skill-name>/SKILLS.md`
 - `skills/manifest.json` auto-generated for listing, search, and the launcher
 - SKILLS.md files that can be handed straight to AI coding assistants (agents)
@@ -49,10 +49,22 @@ A seedling box is a small container that **guards and raises seeds until they ar
 |---|---|---|
 | By development use case | `skills/usage/` | Web development, backend, data analysis, infra / DevOps, etc. |
 | By programming language | `skills/language/` | Python, TypeScript, Go, Rust, C / C++, JavaScript, R, COBOL, etc. |
+| By markup language | `skills/markup/` | Markdown (.md), Quarto (.qmd), AsciiDoc, reStructuredText, HTML, LaTeX, Mermaid, etc. |
 | By runtime environment | `skills/environment/` | Local development, cloud, SaaS integrations |
 | Other | `skills/others/` | Review, testing, security, documentation, etc. |
 
 The index is generated into `skills/manifest.json` (`node tools/build-manifest.mjs`).
+
+## Featured collections
+
+Curated sets that bundle related skills across multiple axes around a purpose. One file per collection lives at `collections/<id>.md`, declaring its composition in the frontmatter `skills` list (skill paths). They are pulled into the manifest automatically under `collections`.
+
+| Collection | Skills |
+|---|---|
+| Python feature | `language/python` + `usage/data-analysis` / `usage/machine-learning` / `usage/web-scraping` / `usage/backend-api` + `others/testing` / `others/prompt-engineering` |
+| R feature | `language/r` + `markup/r-markdown` / `markup/quarto` + `usage/data-analysis` / `usage/machine-learning` |
+
+If the taxonomy gives you points, featured collections give you a purpose-driven line.
 
 ## A dialect-tolerant design (growing vernacular)
 
@@ -140,9 +152,13 @@ The repository layout and its four collections are summarized in a diagram. Open
 │   ├── manifest.json            # Auto-generated index
 │   ├── _TEMPLATE/SKILLS.md      # Skill template
 │   ├── usage/                   # By development use case
-│   ├── language/                # By language
+│   ├── language/                # By programming language
+│   ├── markup/                  # By markup language
 │   ├── environment/             # By runtime environment
 │   └── others/                  # Other
+├── collections/                 # Featured collections (cross-axis curation)
+│   ├── python.md                # Python feature
+│   └── r.md                     # R feature
 └── tools/
     ├── build-manifest.mjs       # Manifest generator
     └── lint-skills.mjs          # SKILLS.md validation (3 layers / by scope)

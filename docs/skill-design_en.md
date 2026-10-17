@@ -26,7 +26,7 @@ Good ways to match the two are still being explored. This repository exists as a
 
 This repository holds both the SKILLS.md files that carry skills and the meta layer that defines how to make them (design notes, template, linter). Left alone, it closes into a self-referential loop: "SKILLS.md for writing SKILLS.md." We overcome it not by escaping, but by **turning the loop into an open circuit**.
 
-1. **Asymmetry of layers — keep the meta layer thin**: hold the meta layer to the minimal core that defines "how to make them," and let the content layer (usage / language / environment / others) address external domains broadly. Do not grow the meta layer; keep it thin and let it not crowd out the content.
+1. **Asymmetry of layers — keep the meta layer thin**: hold the meta layer to the minimal core that defines "how to make them," and let the content layer (usage / language / markup / environment / others) address external domains broadly. Do not grow the meta layer; keep it thin and let it not crowd out the content.
 2. **Point meaning outward**: the contract is standard, the body is vernacular, and the bridge (word mapping) guarantees "the reader — human or AI — can reach the meaning." Meaning always points to the outside reader and the field, never to the skill itself.
 3. **Validate by transplanting to the field**: value is measured when a skill is transplanted into a real project and used on real tasks. Run the adopt → review → update loop, and decide truth by outside results rather than self-description. The seedling box is not the field.
 4. **Impose an exit condition**: each skill must target real work other than "writing SKILLS.md" and must stand alone. Do not add meta-only skills.

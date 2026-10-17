@@ -348,6 +348,7 @@ button:focus-visible {
 
   <nav class="lp-nav">
     <a href="#categories-heading">分類体系</a>
+    <a href="#collections-heading">特設コレクション</a>
     <a href="#structure-heading">構造図</a>
     <a href="#usage-heading">使い方</a>
     <a href="#contribute-heading">貢献する</a>
@@ -359,7 +360,7 @@ button:focus-visible {
 
     <section aria-labelledby="categories-heading">
       <h2 id="categories-heading">分類体系</h2>
-      <p class="intro">目的や技術スタックに応じて、必要なスキル定義をすぐに見つけられるよう、4つの軸で整理しています。</p>
+      <p class="intro">目的や技術スタックに応じて、必要なスキル定義をすぐに見つけられるよう、5つの軸で整理しています。</p>
       <div class="cards">
         <article class="card">
           <span class="card-label">usage.md</span>
@@ -391,6 +392,20 @@ button:focus-visible {
         </article>
 
         <article class="card">
+          <span class="card-label">markup.md</span>
+          <h3>マークアップ言語別</h3>
+          <p>Markdown（.md）、Quarto（.qmd）、AsciiDoc、reStructuredText、HTML、LaTeX、Mermaidなど、文書と図を書くための記法を収録。</p>
+          <div class="tags">
+            <span class="tag">markdown</span>
+            <span class="tag">quarto</span>
+            <span class="tag">asciidoc</span>
+            <span class="tag">html</span>
+            <span class="tag">latex</span>
+            <span class="tag">mermaid</span>
+          </div>
+        </article>
+
+        <article class="card">
           <span class="card-label">environment.md</span>
           <h3>実行環境別</h3>
           <p>ローカル開発向けと、クラウド・Webサービス連携向けに分類。環境に最適化されたスキルを提供。</p>
@@ -414,10 +429,40 @@ button:focus-visible {
       </div>
     </section>
 
+    <section aria-labelledby="collections-heading">
+      <h2 id="collections-heading">特設コレクション</h2>
+      <p class="intro">複数の軸にまたがる関連スキルを、目的別に体系化して束ねた特集です。</p>
+      <div class="cards">
+        <article class="card">
+          <span class="card-label">collections/python.md</span>
+          <h3>Python 特集</h3>
+          <p>Python を軸に、データ分析・機械学習・スクレイピング・バックエンド・テストを横断的に体系化。</p>
+          <div class="tags">
+            <span class="tag">python</span>
+            <span class="tag">data-analysis</span>
+            <span class="tag">machine-learning</span>
+            <span class="tag">testing</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <span class="card-label">collections/r.md</span>
+          <h3>R 特集</h3>
+          <p>R を軸に、R Markdown・Quarto・データ分析・機械学習をひとつの流れに体系化。</p>
+          <div class="tags">
+            <span class="tag">r</span>
+            <span class="tag">r-markdown</span>
+            <span class="tag">quarto</span>
+            <span class="tag">data-analysis</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <section aria-labelledby="structure-heading">
       <h2 id="structure-heading">構造図</h2>
       <div class="cta">
-        <h3>リポジトリ構造と 4 軸コレクション</h3>
+        <h3>リポジトリ構造と 5 軸コレクション</h3>
         <p>スキルの育苗から AI コーディング支援ツールへの移植までの流れを、インタラクティブな図で俯瞰できます。拡大・検索・テーマ切替・関係トレースに対応しています。</p>
         <a href="./docs/repository-structure.html" class="btn">構造図を開く</a>
         <a href="https://github.com/watanabe3tipapa/skills-seedling/blob/main/docs/repository-structure.architecture.json" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">図の定義（JSON）</a>

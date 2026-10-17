@@ -5,15 +5,17 @@ import { fileURLToPath } from "node:url";
 
 const repoRoot = fileURLToPath(new URL("..", import.meta.url));
 const skillsDir = join(repoRoot, "skills");
+const collectionsDir = join(repoRoot, "collections");
 const outFile = join(skillsDir, "manifest.json");
 
 const CATEGORY_LABELS = {
   usage: "開発用途別",
   language: "プログラミング言語別",
+  markup: "マークアップ言語別",
   environment: "実行環境別",
   others: "その他",
 };
-const CATEGORY_ORDER = ["usage", "language", "environment", "others"];
+const CATEGORY_ORDER = ["usage", "language", "markup", "environment", "others"];
 
 function parseFrontmatter(text) {
   const match = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?/.exec(text);
@@ -75,6 +77,47 @@ for (const list of Object.values(byCategory)) {
   list.sort((a, b) => a.name.localeCompare(b.name));
 }
 
+const skillByPath = {};
+for (const list of Object.values(byCategory)) {
+  for (const s of list) skillByPath[s.path] = s;
+}
+
+function readCollections() {
+  let entries = [];
+  try {
+    entries = readdirSync(collectionsDir);
+  } catch {
+    return [];
+  }
+  const out = [];
+  for (const entry of entries.sort()) {
+    if (!entry.endsWith(".md")) continue;
+    const full = join(collectionsDir, entry);
+    if (!statSync(full).isFile()) continue;
+    const rel = relative(repoRoot, full).split("\\").join("/");
+    const fm = parseFrontmatter(readFileSync(full, "utf8"));
+    const paths = Array.isArray(fm.skills) ? fm.skills : [];
+    out.push({
+      id: fm.name || entry.replace(/\.md$/, ""),
+      label: fm.label || fm.name || entry.replace(/\.md$/, ""),
+      description: fm.description || "",
+      path: rel,
+      skills: paths.map((p) => {
+        const s = skillByPath[`skills/${p}/SKILLS.md`];
+        return {
+          path: p,
+          name: s?.name || p.split("/").pop(),
+          category: p.split("/")[0],
+          description: s?.description || "",
+        };
+      }),
+    });
+  }
+  return out;
+}
+
+const collections = readCollections();
+
 const manifest = {
   generated: new Date().toISOString().slice(0, 10),
   editor: "https://right-stuff-editor.vercel.app/editor",
@@ -84,8 +127,9 @@ const manifest = {
     label: CATEGORY_LABELS[id] || id,
     skills: byCategory[id],
   })),
+  collections,
 };
 
 writeFileSync(outFile, JSON.stringify(manifest, null, 2) + "\n");
 const total = manifest.categories.reduce((n, c) => n + c.skills.length, 0);
-console.log(`Wrote ${relative(repoRoot, outFile)} (${total} skills)`);
+console.log(`Wrote ${relative(repoRoot, outFile)} (${total} skills, ${collections.length} collections)`);
