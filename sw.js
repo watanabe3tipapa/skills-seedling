@@ -1,4 +1,4 @@
-const CACHE = "skills-seedling-v3";
+const CACHE = "skills-seedling-v4";
 const SHELL = [
   "./editor.html",
   "./index.html",

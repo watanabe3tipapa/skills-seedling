@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-14",
+  "generated": "2026-10-17",
   "editor": "https://right-stuff-editor.vercel.app/editor",
   "rawBase": "https://cdn.jsdelivr.net/gh/watanabe3tipapa/skills-seedling@main/",
   "categories": [
@@ -642,6 +642,22 @@
           "path": "skills/others/performance-optimization/SKILLS.md"
         },
         {
+          "name": "prompt-engineering",
+          "description": "LLM への依頼文（プロンプト）の設計・改善を行うスキル。役割設定、制約、出力形式の指定、反復改善を支援する。",
+          "tags": [
+            "prompt",
+            "llm",
+            "ai",
+            "context-engineering"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/others/prompt-engineering/SKILLS.md"
+        },
+        {
           "name": "refactoring",
           "description": "既存コードを安全に整理・改善するスキル。重複排除、責務分割、命名改善を、挙動を変えずに進める。",
           "tags": [
@@ -674,15 +690,17 @@
         },
         {
           "name": "security",
-          "description": "セキュリティを考慮した実装・レビューを行うスキル。入力検証、認可、シークレット管理、依存の脆弱性対応を支援する。",
+          "description": "セキュリティを考慮した実装・レビューと脆弱性スキャンを行うスキル。入力検証、認可、シークレット管理、依存の脆弱性対応に加え、コードベース全体・変更点の監査と修正パッチの提案を支援する。",
           "tags": [
             "security",
             "owasp",
             "secrets",
-            "authz"
+            "authz",
+            "audit",
+            "threat-model"
           ],
-          "version": "0.1.0",
-          "updated": "2026-10-14",
+          "version": "0.2.0",
+          "updated": "2026-10-18",
           "lang": "ja",
           "scope": "shared",
           "variety": "",

@@ -107,6 +107,13 @@ git push -u origin main
 
 > `docs/*.md` や `GLOSSARY.md` は静的サイトでは Markdown のまま配信されます（GitHub 上では整形表示されます）。
 
+## 構造図
+
+リポジトリ構造と 4 軸コレクションの関係を図にまとめています。下記の HTML を開くと、拡大・検索・テーマ切替・関係トレースができます。
+
+- [構造図（インタラクティブ HTML）](docs/repository-structure.html)
+- 図の定義: [`docs/repository-structure.architecture.json`](docs/repository-structure.architecture.json)
+
 ## リポジトリ構成
 
 ```text
@@ -122,7 +129,9 @@ git push -u origin main
 ├── icons/                       # PWA アイコン（SVG + PNG）
 ├── docs/
 │   ├── skill-design.md          # SKILLS.md 設計方針（日本語）
-│   └── skill-design_en.md       # 同（英語）
+│   ├── skill-design_en.md       # 同（英語）
+│   ├── repository-structure.html              # 構造図（インタラクティブ HTML）
+│   └── repository-structure.architecture.json # 図の定義（Archify）
 ├── skills/
 │   ├── manifest.json            # 自動生成される索引
 │   ├── _TEMPLATE/SKILLS.md      # スキル雛形

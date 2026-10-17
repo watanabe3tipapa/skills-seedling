@@ -107,6 +107,13 @@ The published URL is `https://watanabe3tipapa.github.io/skills-seedling/`.
 
 > `docs/*.md` and `GLOSSARY.md` are served as raw Markdown on the static site (they render nicely on GitHub).
 
+## Structure diagram
+
+The repository layout and its four collections are summarized in a diagram. Open the HTML below to zoom, search, switch themes, and trace relationships.
+
+- [Diagram (interactive HTML)](docs/repository-structure.html)
+- Diagram source: [`docs/repository-structure.architecture.json`](docs/repository-structure.architecture.json)
+
 ## Repository layout
 
 ```text
@@ -122,7 +129,9 @@ The published URL is `https://watanabe3tipapa.github.io/skills-seedling/`.
 ├── icons/                       # PWA icons (SVG + PNG)
 ├── docs/
 │   ├── skill-design.md          # SKILLS.md design (Japanese)
-│   └── skill-design_en.md       # SKILLS.md design (English)
+│   ├── skill-design_en.md       # SKILLS.md design (English)
+│   ├── repository-structure.html              # Structure diagram (interactive HTML)
+│   └── repository-structure.architecture.json # Diagram source (Archify)
 ├── skills/
 │   ├── manifest.json            # Auto-generated index
 │   ├── _TEMPLATE/SKILLS.md      # Skill template
