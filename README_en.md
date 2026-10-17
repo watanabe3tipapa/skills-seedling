@@ -5,6 +5,7 @@
 skills-seedling is a curated repository that organizes **SKILLS.md** files for AI coding assistants by development use case, programming language, and runtime environment — grown to be readable by both agents and humans.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/version-v0.1.0-blue.svg)](https://github.com/watanabe3tipapa/skills-seedling/releases)
 [![SKILLS.md](https://img.shields.io/badge/SKILLS.md-collection-4f46e5.svg)](#taxonomy)
 [![GitHub](https://img.shields.io/github/issues/watanabe3tipapa/skills-seedling.svg)](https://github.com/watanabe3tipapa/skills-seedling/issues)
 
@@ -140,6 +141,7 @@ The repository layout and its six collections are summarized in a diagram. Open 
 ├── README_en.md                 # This file (English)
 ├── GLOSSARY.md                  # Word mapping (decoding vernacular)
 ├── LICENSE                      # MIT
+├── VERSION                      # Repository version (v0.1.0)
 ├── index.html                   # Landing page
 ├── editor.html                  # Editor launcher (PWA)
 ├── manifest.webmanifest         # PWA manifest

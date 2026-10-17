@@ -5,6 +5,7 @@
 skills-seedling は、AI コーディング支援ツールで活用できる **SKILLS.md** を、開発用途・言語・実行環境別に体系化し、エージェントにも人間にも使いやすい形で育てていくキュレーションリポジトリです。
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/version-v0.1.0-blue.svg)](https://github.com/watanabe3tipapa/skills-seedling/releases)
 [![SKILLS.md](https://img.shields.io/badge/SKILLS.md-collection-4f46e5.svg)](#分類体系)
 [![GitHub](https://img.shields.io/github/issues/watanabe3tipapa/skills-seedling.svg)](https://github.com/watanabe3tipapa/skills-seedling/issues)
 
@@ -140,6 +141,7 @@ git push -u origin main
 ├── README_en.md                 # 英語版
 ├── GLOSSARY.md                  # ことばの対応表（土語のデコード）
 ├── LICENSE                      # MIT
+├── VERSION                      # リポジトリのバージョン（v0.1.0）
 ├── index.html                   # ランディングページ
 ├── editor.html                  # エディタ・ランチャー（PWA）
 ├── manifest.webmanifest         # PWA マニフェスト
