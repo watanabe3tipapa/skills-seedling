@@ -129,6 +129,19 @@ Separating the layers lines up naturally with homegrown LLM features.
 4. Add hard-to-follow words to "word mapping" or the GLOSSARY
 5. Validate with `node tools/lint-skills.mjs` and refresh the index with `node tools/build-manifest.mjs`
 
+## The PDCA cycle and how this repository applies it
+
+The work of this repository can be read either as the seedling-box cycle (sow → raise → thin → transplant) or as PDCA. In PDCA terms:
+
+| Stage | General idea | Use in this repository |
+| --- | --- | --- |
+| **Plan** | Decide the purpose, subject, and scope | Set the subject and sharing range in the `_TEMPLATE/SKILLS.md` frontmatter (`description` / `scope` / `tags` / `version`) |
+| **Do** | Do the work | Write `skills/<axis>/<skill-name>/SKILLS.md` in three layers (contract / body / bridge). Attach intent anchors to dialectal headings |
+| **Check** | Verify | Validate layers A/B/C with `node tools/lint-skills.mjs` (`--strict` / `--json`), review via PR / Issue, and check freshness (180 days since `reviewed`) |
+| **Act** | Improve and settle | Update `version` / `updated`, de-duplicate, and regenerate the index with `node tools/build-manifest.mjs`. Transplant a skill into a project and feed the real-task adoption results back into the next Plan |
+
+**The PDCA of this repository does not close.** Plan–Check run inside the box (the repository), but the real validation of **Act happens in the field (transplanting into a real project and actual use)**, and its results return to the next Plan. This cycle is the substance of the open circuit that overcomes "SKILLS for SKILLS."
+
 ## References
 
 - [`GLOSSARY.md`](../GLOSSARY.md) — the word mapping

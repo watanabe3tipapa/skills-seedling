@@ -129,6 +129,19 @@ node tools/lint-skills.mjs --json     # 機械可読（RAG / CI 連携用）
 4. 通じにくい語は「ことばの対応」か GLOSSARY に足す
 5. `node tools/lint-skills.mjs` で検証し、`node tools/build-manifest.mjs` で索引を更新する
 
+## PDCA サイクルとこのリポジトリの適用
+
+このリポジトリの営みは、育苗箱のサイクル（種まき → 育苗 → 間引き → 移植）としても、PDCA としても読めます。PDCA で言えば次の通りです。
+
+| 段階 | 一般概念 | このリポジトリでの用例 |
+| --- | --- | --- |
+| **Plan** | 目的・対象・適用範囲を決める | `_TEMPLATE/SKILLS.md` の frontmatter（`description` / `scope` / `tags` / `version`）で対象と共有範囲を定める |
+| **Do** | 実行する | `skills/<軸>/<スキル名>/SKILLS.md` を 3 層（契約・本文・橋渡し）で書く。方言の見出しには意図アンカーを付ける |
+| **Check** | 検証する | `node tools/lint-skills.mjs`（`--strict` / `--json`）で A/B/C 層を検証。PR / Issue でレビューし、鮮度（`reviewed` から 180 日）を確認する |
+| **Act** | 改善・定着させる | `version` / `updated` を更新し、重複を整理、`node tools/build-manifest.mjs` で索引を再生成。プロジェクトへ移植し、実タスクでの採用結果を次の Plan に戻す |
+
+**このリポジトリの PDCA は閉じません。** Plan〜Check は箱（リポジトリ）の中で回せますが、**Act の真の検証は畑（本番プロジェクトへの移植と実利用）**で起き、その結果が次の Plan に戻ります。「SKILLS のための SKILLS」を超える開回路の実体が、このサイクルです。
+
 ## 参考
 
 - [`GLOSSARY.md`](../GLOSSARY.md) — ことばの対応表
