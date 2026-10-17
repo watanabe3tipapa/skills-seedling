@@ -48,7 +48,7 @@ A seedling box is a small container that **guards and raises seeds until they ar
 | Axis | Directory | Contents |
 |---|---|---|
 | By development use case | `skills/usage/` | Web development, backend, data analysis, infra / DevOps, etc. |
-| By programming language | `skills/language/` | Python, TypeScript, Rust, Go, etc. |
+| By programming language | `skills/language/` | Python, TypeScript, Go, Rust, C / C++, JavaScript, R, COBOL, etc. |
 | By runtime environment | `skills/environment/` | Local development, cloud, SaaS integrations |
 | Other | `skills/others/` | Review, testing, security, documentation, etc. |
 

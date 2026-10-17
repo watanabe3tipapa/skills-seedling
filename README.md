@@ -48,7 +48,7 @@ skills-seedling は、目的や技術スタックに応じて必要なスキル�
 | 軸 | ディレクトリ | 内容 |
 |---|---|---|
 | 開発用途別 | `skills/usage/` | Web 開発、バックエンド、データ分析、インフラ / DevOps など |
-| プログラミング言語別 | `skills/language/` | Python、TypeScript、Rust、Go など |
+| プログラミング言語別 | `skills/language/` | Python、TypeScript、Go、Rust、C / C++、JavaScript、R、COBOL など |
 | 実行環境別 | `skills/environment/` | ローカル開発、クラウド、SaaS 連携 |
 | その他 | `skills/others/` | レビュー、テスト、セキュリティ、ドキュメントなど |
 

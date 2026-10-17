@@ -213,6 +213,54 @@
       "label": "プログラミング言語別",
       "skills": [
         {
+          "name": "c",
+          "description": "C のコードを書く・直す際のスキル。メモリ管理、未定義動作の回避、境界チェック、警告の扱いに沿って実装を支援する。",
+          "tags": [
+            "c",
+            "memory",
+            "pointers",
+            "undefined-behavior"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/language/c/SKILLS.md"
+        },
+        {
+          "name": "cobol",
+          "description": "COBOL のコードを書く・直す際のスキル。書式、データ部、数値計算、既存資産の保守に沿って変更を支援する。",
+          "tags": [
+            "cobol",
+            "legacy",
+            "mainframe",
+            "batch"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/language/cobol/SKILLS.md"
+        },
+        {
+          "name": "cpp",
+          "description": "C++ のコードを書く・直す際のスキル。RAII、所有権、ムーブ、const 正しさ、モダン C++ の慣用句に沿って実装を支援する。",
+          "tags": [
+            "cpp",
+            "raii",
+            "memory",
+            "modern-cpp"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/language/cpp/SKILLS.md"
+        },
+        {
           "name": "csharp",
           "description": "C#/.NET のコードを書く・直す際のスキル。型付け、async/await、LINQ、DI に沿って実装を支援する。",
           "tags": [
@@ -227,6 +275,22 @@
           "scope": "shared",
           "variety": "",
           "path": "skills/language/csharp/SKILLS.md"
+        },
+        {
+          "name": "elixir",
+          "description": "Elixir のコードを書く・直す際のスキル。不変性、パターンマッチ、OTP、プロセス設計に沿って実装を支援する。",
+          "tags": [
+            "elixir",
+            "otp",
+            "functional",
+            "beam"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/language/elixir/SKILLS.md"
         },
         {
           "name": "go",
@@ -261,6 +325,22 @@
           "path": "skills/language/java/SKILLS.md"
         },
         {
+          "name": "javascript",
+          "description": "JavaScript のコードを書く・直す際のスキル。非同期処理、型変換、スコープ、ESLint に沿って実装を支援する。",
+          "tags": [
+            "javascript",
+            "async",
+            "node",
+            "es2023"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/language/javascript/SKILLS.md"
+        },
+        {
           "name": "kotlin",
           "description": "Kotlin のコードを書く・直す際のスキル。null 安全、データクラス、コルーチン、Gradle に沿って実装を支援する。",
           "tags": [
@@ -293,6 +373,22 @@
           "path": "skills/language/php/SKILLS.md"
         },
         {
+          "name": "powershell",
+          "description": "PowerShell のコードを書く・直す際のスキル。オブジェクトパイプライン、エラー処理、冪等性、PSScriptAnalyzer に沿って支援する。",
+          "tags": [
+            "powershell",
+            "automation",
+            "pipeline",
+            "windows"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/language/powershell/SKILLS.md"
+        },
+        {
           "name": "python",
           "description": "Python のコードを書く・直す際のスキル。型ヒント、venv、pytest、パッケージ管理、慣用的な書き方に沿って実装を支援する。",
           "tags": [
@@ -307,6 +403,22 @@
           "scope": "shared",
           "variety": "",
           "path": "skills/language/python/SKILLS.md"
+        },
+        {
+          "name": "r",
+          "description": "R のコードを書く・直す際のスキル。tidyverse、ベクトル化、欠損値、再現性に沿って分析コードを支援する。",
+          "tags": [
+            "r",
+            "tidyverse",
+            "statistics",
+            "data-analysis"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/language/r/SKILLS.md"
         },
         {
           "name": "ruby",
@@ -339,6 +451,22 @@
           "scope": "shared",
           "variety": "",
           "path": "skills/language/rust/SKILLS.md"
+        },
+        {
+          "name": "scala",
+          "description": "Scala のコードを書く・直す際のスキル。不変データ、Option/Either、パターンマッチ、型クラスに沿って実装を支援する。",
+          "tags": [
+            "scala",
+            "functional",
+            "option",
+            "pattern-matching"
+          ],
+          "version": "0.1.0",
+          "updated": "2026-10-18",
+          "lang": "ja",
+          "scope": "shared",
+          "variety": "",
+          "path": "skills/language/scala/SKILLS.md"
         },
         {
           "name": "shell-bash",
