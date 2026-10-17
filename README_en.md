@@ -16,6 +16,8 @@ skills-seedling is a curated repository that organizes **SKILLS.md** files for A
 
 skills-seedling is a collection that organizes SKILLS.md files along **four axes** (development use case / programming language / runtime environment / other) so you can quickly find the skill definition you need for your goal or tech stack. Rather than treating skill definitions as a one-off copy source, it places them in a *growing* process — reviews and updates keep them fresh and reusable.
 
+At its root, this repository asks **how to mesh the properties of Japanese as a natural language with computing** (tools, types, search, LLMs). The three-layer design — machine-readable only in the layer of meaning, surface form preserved — is an attempt to improve that match, not a finished form. Good approaches are still being explored, and this repository is a place to bring the findings together.
+
 ## Concept (why "seedling"?)
 
 A seedling box is a small container that **guards and raises seeds until they are ready to be transplanted into the field**. skills-seedling works the same way: it grows skill definitions until they can be transplanted into your project's AI tools.
@@ -59,6 +61,8 @@ SKILLS.md does not have to be normalized into English or standard language. **Th
 - **Layer A — contract**: frontmatter keys/values (`name`, `category`, `lang`, `scope`, …) — strict
 - **Layer B — body**: sections such as "when to use" / "how to proceed" — free (dialect OK)
 - **Layer C — bridge**: `description`, "word mapping", [`GLOSSARY.md`](GLOSSARY.md) — guaranteeing the meaning is reachable
+
+"Word mapping" is the section that maps words in the body to canonical meanings. Words used only within a skill go in that skill's `## Word mapping {#gloss}`; words shared across skills go in [`GLOSSARY.md`](GLOSSARY.md).
 
 Dialectal headings can be made machine-readable with intent anchors:
 

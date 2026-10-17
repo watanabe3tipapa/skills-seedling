@@ -12,6 +12,27 @@ Against this backdrop, the premise that "everything must first be normalized int
 
 > Vernacular: the language of a place or a team — dialects, colloquialisms, and internal slang. Here it is treated not as something to normalize away, but as something to preserve.
 
+## Why this repository exists — matching Japanese and computing
+
+The question at the root is **how to mesh the properties of Japanese as a natural language with computing** (tools, types, search, LLMs). This is the very reason this repository exists.
+
+- Japanese has strong word order, inflection, honorifics, dialects, ellipsis, and context dependence, which sit poorly with English-first normalization and surface-string matching.
+- So we make only the layer of meaning machine-readable (frontmatter, intent anchors, word mapping) and keep the surface form.
+- The three-layer model, intent anchors, and GLOSSARY are attempts to improve that mesh — not a finished form.
+
+Good ways to match the two are still being explored. This repository exists as a place to bring together experiments and findings.
+
+## Overcoming "SKILLS for SKILLS"
+
+This repository holds both the SKILLS.md files that carry skills and the meta layer that defines how to make them (design notes, template, linter). Left alone, it closes into a self-referential loop: "SKILLS.md for writing SKILLS.md." We overcome it not by escaping, but by **turning the loop into an open circuit**.
+
+1. **Asymmetry of layers — keep the meta layer thin**: hold the meta layer to the minimal core that defines "how to make them," and let the content layer (usage / language / environment / others) address external domains broadly. Do not grow the meta layer; keep it thin and let it not crowd out the content.
+2. **Point meaning outward**: the contract is standard, the body is vernacular, and the bridge (word mapping) guarantees "the reader — human or AI — can reach the meaning." Meaning always points to the outside reader and the field, never to the skill itself.
+3. **Validate by transplanting to the field**: value is measured when a skill is transplanted into a real project and used on real tasks. Run the adopt → review → update loop, and decide truth by outside results rather than self-description. The seedling box is not the field.
+4. **Impose an exit condition**: each skill must target real work other than "writing SKILLS.md" and must stand alone. Do not add meta-only skills.
+
+Keep the meta layer minimal and bounded, then open meaning and validation to the outside (the field). That is the policy for not closing into self-reference.
+
 ## The three-layer model
 
 Think of a SKILLS.md in three layers. The key principle: **standardize only the layer of meaning; do not take away the surface form.**
@@ -64,6 +85,10 @@ variety: Kansai-ben  # optional; name of the dialect/slang
 A skill whose `lang` carries a regional variant (`ja-kansai`, etc.) or that has a `variety` is treated as "has dialect," and layer C requires decodability.
 
 ### 4. GLOSSARY and "word mapping" — guaranteeing decodability
+
+**"Word mapping"** is the section that maps words appearing in a SKILLS.md body to a canonical meaning that still reads outside its original context (the core of layer C — the bridge). It does not rewrite into standard language; it **keeps the mapping between word and meaning** so readers (colleagues, other teams, AI) can reach the meaning.
+
+Where it goes depends on the sharing range.
 
 - **Words used only in one skill** → write them in that skill's `## Word mapping {#gloss}`
 - **Words used by two or more skills** → collect them in the root [`GLOSSARY.md`](../GLOSSARY.md)
