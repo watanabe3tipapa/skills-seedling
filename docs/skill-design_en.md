@@ -20,7 +20,7 @@ Think of a SKILLS.md in three layers. The key principle: **standardize only the 
 | --- | --- | --- | --- |
 | **A. Contract** | Machine-readable part tools/agents read | frontmatter keys and values (`name`, `category`, `scope`, …) | **Strict** (canonical keys only) |
 | **B. Body** | The author's own words | sections such as "when to use", "how to proceed" | **Free** (dialect is fine) |
-| **C. Bridge** | Translates B for machines/others/other languages | `description`, "notes on words", GLOSSARY.md | **Required** (decodability) |
+| **C. Bridge** | Translates B for machines/others/other languages | `description`, "word mapping", GLOSSARY.md | **Required** (decodability) |
 
 - Layer A is normalized (keys are fixed; otherwise tooling breaks).
 - Layer B respects the writer's voice (no need to rewrite into standard language).
@@ -63,9 +63,9 @@ variety: Kansai-ben  # optional; name of the dialect/slang
 
 A skill whose `lang` carries a regional variant (`ja-kansai`, etc.) or that has a `variety` is treated as "has dialect," and layer C requires decodability.
 
-### 4. GLOSSARY and "notes on words" — guaranteeing decodability
+### 4. GLOSSARY and "word mapping" — guaranteeing decodability
 
-- **Words used only in one skill** → write them in that skill's `## Notes on words {#gloss}`
+- **Words used only in one skill** → write them in that skill's `## Word mapping {#gloss}`
 - **Words used by two or more skills** → collect them in the root [`GLOSSARY.md`](../GLOSSARY.md)
 
 You do not need to rewrite vernacular into standard language. Just **keep the mapping (the meaning)**, and both AI and non-native readers can reach it.
@@ -101,7 +101,7 @@ Separating the layers lines up naturally with homegrown LLM features.
 1. Copy the template (`skills/_TEMPLATE/SKILLS.md`)
 2. Fill in layer A (frontmatter). Consider `lang` and `scope` mandatory
 3. Write layer B in your own words. Add intent anchors to dialectal headings
-4. Add hard-to-follow words to "notes on words" or the GLOSSARY
+4. Add hard-to-follow words to "word mapping" or the GLOSSARY
 5. Validate with `node tools/lint-skills.mjs` and refresh the index with `node tools/build-manifest.mjs`
 
 ## References

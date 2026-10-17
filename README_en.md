@@ -58,7 +58,7 @@ SKILLS.md does not have to be normalized into English or standard language. **Th
 
 - **Layer A — contract**: frontmatter keys/values (`name`, `category`, `lang`, `scope`, …) — strict
 - **Layer B — body**: sections such as "when to use" / "how to proceed" — free (dialect OK)
-- **Layer C — bridge**: `description`, "notes on words", [`GLOSSARY.md`](GLOSSARY.md) — guaranteeing the meaning is reachable
+- **Layer C — bridge**: `description`, "word mapping", [`GLOSSARY.md`](GLOSSARY.md) — guaranteeing the meaning is reachable
 
 Dialectal headings can be made machine-readable with intent anchors:
 

@@ -3,7 +3,7 @@
 //
 //   A層: frontmatter のキー・enum・命名・日付は厳格に検証（表記が違っても直す）
 //   B層: 見出しは「字面一致」ではなく「意図一致」で検証（方言の見出しを許容）
-//   C層: 方言・社内語が意味に到達できるか（description / 「ことばの註」/ GLOSSARY）を検証
+//   C層: 方言・社内語が意味に到達できるか（description / 「ことばの対応」/ GLOSSARY）を検証
 //
 // 厳格度は scope で変わる:
 //   team / project  -> 不足は warn（現場の言葉を優先）
@@ -40,7 +40,7 @@ const INTENTS = [
   { id: "checklist", required: ["shared", "canonical"],
     aliases: ["チェックリスト", "確認項目", "確認事項", "チェック", "checklist"] },
   { id: "gloss", required: [],
-    aliases: ["ことばの註", "ことばの注", "用語集", "用語の註", "用語", "ことば", "glossary"] },
+    aliases: ["ことばの対応", "用語集", "用語", "ことば", "glossary"] },
   { id: "refs", required: ["canonical"],
     aliases: ["参考", "参照", "関連", "リンク", "references", "see also"] },
 ];
@@ -195,7 +195,7 @@ function lintFile(file) {
   const refsText = fm.reference || fm.refs || "";
   const mentionsGlossary = /GLOSSARY/i.test(body) || /GLOSSARY/i.test(String(refsText));
   if (isDialect && !hasGloss && !mentionsGlossary) {
-    warn("C層: 方言/社内語 (lang に地域差 or variety) がありますが『ことばの註』も GLOSSARY 参照もありません");
+    warn("C層: 方言/社内語 (lang に地域差 or variety) がありますが『ことばの対応』も GLOSSARY 参照もありません");
   }
 
   // ---------- 鮮度 ----------

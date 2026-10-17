@@ -58,7 +58,7 @@ SKILLS.md は、英語や標準語に正規化しなくても成立します。*
 
 - **A層 契約**: frontmatter のキーと値（`name` / `category` / `lang` / `scope` など）— 厳格
 - **B層 本文**: 「いつ使うか」「進め方」などの本文 — 自由（方言 OK）
-- **C層 橋渡し**: `description`・「ことばの註」・[`GLOSSARY.md`](GLOSSARY.md) — 意味に到達できることを担保
+- **C層 橋渡し**: `description`・「ことばの対応」・[`GLOSSARY.md`](GLOSSARY.md) — 意味に到達できることを担保
 
 方言の見出しは意図アンカーで機械可読にできます。
 
